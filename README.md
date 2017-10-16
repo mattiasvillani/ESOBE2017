@@ -26,4 +26,4 @@
 
 	**15.00-15.15 Coffee/Tea break**
 
-	**15.15-16.00 A quick peek at Deep Learning**
+15.15-16.00 A quick peek at Deep Learning**
