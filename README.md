@@ -1,29 +1,32 @@
-	**Machine Learning Models and Methods for Econometricians**
-				one-day tutorial at
-	European Seminar of Bayesian Econometrics 2017 in Maastricht
+### Machine Learning Models and Methods for Econometricians
+				
+one-day tutorial at
+
+#### European Seminar of Bayesian Econometrics 2017 in Maastricht
 
 
-	**09.00-09.15 Coffee/Tea**
 
 
-	**09.15-10.00 Gaussian Process Regression**
+##### 09.00-09.15 Coffee/Tea
 
-	**10.00-10.15 Break**
+##### 09.15-10.00 Gaussian Process Regression
 
-	**10.15-11.00 Gaussian Process Classification and Optimization**
+##### 10.00-10.15 Break
 
-	**11.00-11.15 Coffee/Tea break**
+##### 10.15-11.00 Gaussian Process Classification and Optimization
 
-	**11.15-12.00 Distributed and Subsampling MCMC**
+##### 11.00-11.15 Coffee/Tea break
 
-	**12.00-13.15 Lunch**
+##### 11.15-12.00 Distributed and Subsampling MCMC
 
-	**13.15-14.00 Text as data - Topic Models**
+##### 12.00-13.15 Lunch
 
-	**14.00-14.15 Break**
+##### 13.15-14.00 Text as data - Topic Models
 
-	**14.15-15.00 Variational Bayes**
+##### 14.00-14.15 Break
 
-	**15.00-15.15 Coffee/Tea break**
+##### 14.15-15.00 Variational Bayes
 
-15.15-16.00 A quick peek at Deep Learning**
+##### 15.00-15.15 Coffee/Tea break
+
+##### 15.15-16.00 A quick peek at Deep Learning
