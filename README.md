@@ -2,7 +2,9 @@
 				one-day tutorial at
 	European Seminar of Bayesian Econometrics 2017 in Maastricht
 
+
 	**09.00-09.15 Coffee/Tea**
+
 
 	**09.15-10.00 Gaussian Process Regression**
 
