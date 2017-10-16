@@ -1,0 +1,336 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{plain}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{axiom}{Axiom}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{remark}{Remark}[section]
+\numberwithin{equation}{section}
+\end_preamble
+\use_default_options false
+\begin_removed_modules
+theorems-ams
+\end_removed_modules
+\begin_modules
+eqs-within-sections
+figs-within-sections
+theorems-ams-bytype
+tabs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "helvet" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 92 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.7cm
+\topmargin 3.2cm
+\rightmargin 2.7cm
+\bottommargin 3.2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ESOBE 2017 Tutorial
+\end_layout
+
+\end_inset
+
+ESOBE 2017 tutorial
+\begin_inset Newline newline
+\end_inset
+
+Machine Learning Models and Methods for Econometricians
+\end_layout
+
+\begin_layout Author
+Mattias Villani 
+\end_layout
+
+\begin_layout Thanks
+Mattias Villani: 
+\shape italic
+Division of Statistics, Dept.
+ of Computer and Information Science, SE-581 83 Linkoping, Sweden
+\shape default
+.
+ 
+\shape italic
+E-mail: mattias.villani@liu.se
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+09.00-09.15 Coffee/Tea
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+09.15-10.00 Gaussian Process Regression
+\end_layout
+
+\begin_layout Itemize
+Reading: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Chapters 2.1-2.5 in 
+\series bold
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Gaussian Processes for Machine Learning"
+target "http://www.gaussianprocess.org/gpml/chapters/RW.pdf"
+
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Chapter on kernels"
+target "https://raw.githubusercontent.com/duvenaud/phd-thesis/master/kernels.pdf"
+
+\end_inset
+
+from 
+\begin_inset CommandInset href
+LatexCommand href
+name "David Duvenaud"
+target "http://www.cs.toronto.edu/~duvenaud/"
+
+\end_inset
+
+'s PhD thesis.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Other material: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Web app"
+target "https://skaae.shinyapps.io/test_project/"
+
+\end_inset
+
+for playing around with basic GP regression.
+\end_layout
+
+\begin_layout Itemize
+Code: 
+\begin_inset CommandInset href
+LatexCommand href
+name "kernlab"
+target "https://cran.r-project.org/web/packages/kernlab/index.html"
+
+\end_inset
+
+ R package + 
+\begin_inset CommandInset href
+LatexCommand href
+name "vignette"
+target "https://cran.r-project.org/web/packages/kernlab/vignettes/kernlab.pdf"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.00-10.15 Break
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.15-11.00 Gaussian Process Classification and Optimization
+\end_layout
+
+\begin_layout Itemize
+Reading:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Chapters 3.1-3.4.1, 3.7 in 
+\series bold
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Gaussian Processes for Machine Learning"
+target "http://www.gaussianprocess.org/gpml/chapters/RW.pdf"
+
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset CommandInset href
+LatexCommand href
+name "Practical Bayesian Optimization of Machine Learning Algorithms"
+target "https://arxiv.org/pdf/1206.2944.pdf"
+
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+11.00-11.15 Coffee/Tea break
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11.15-12.00 Distributed and Subsampling MCMC 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12.00-13.15 Lunch
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+13.15-14.00 Text as data - Topic Models 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14.00-14.15 Break
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14.15-15.00 Variational Bayes
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+15.00-15.15 Coffee/Tea break
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+15.15-16.00 A quick peek at Deep Learning
+\end_layout
+
+\end_body
+\end_document
