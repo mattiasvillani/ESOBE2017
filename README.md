@@ -1,5 +1,7 @@
 **Machine Learning Models and Methods for Econometricians**
-one-day tutorial at
+
+				one-day tutorial at
+
 European Seminar of Bayesian Econometrics 2017 in Maastricht
 
 **09.00-09.15 Coffee/Tea**
