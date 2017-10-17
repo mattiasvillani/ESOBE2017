@@ -101,6 +101,7 @@ Reading:
 Reading: 
 
 - [Slides]() - TBA
+- Chapters 1,4,5 and 6 of [Deep Learning](http://www.deeplearningbook.org/) - the main book for deep learning.
 
 Software:
 
