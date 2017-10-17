@@ -37,8 +37,7 @@ Extras:
 
 ---
 
-<div class="fullgreydiv"> 
-<h4>10.15-11.00 Gaussian Process Classification and Optimization</h4>
+#### 10.15-11.00 Gaussian Process Classification and Optimization
 Reading:
 
 - Chapters 3.1-3.4.1 and 3.7 in [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW.pdf).
@@ -88,6 +87,10 @@ Reading:
 
 - [Slides]() - TBA
 - [Variational Inference: A Review for Statisticians](https://arxiv.org/abs/1601.00670) (JASA2017)
+
+Software:
+
+[Edward for variational inference](http://edwardlib.org/tutorials/variational-inference) - a probabilistic programming language (think Stan)
 
 ---
 
