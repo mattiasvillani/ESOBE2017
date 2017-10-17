@@ -12,6 +12,7 @@ by Mattias Villani, Division of Statistics and Machine Learning, Linköping Univ
 ##### 09.15-10.00 Gaussian Process Regression
 Reading: 
 
+- [Slides]() - TBA
 - Chapters 2.1-2.5 in [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW.pdf).
 - Chapter on [kernels](https://raw.githubusercontent.com/duvenaud/phd-thesis/master/kernels.pdf) from [David Duvenaud](http://www.cs.toronto.edu/~duvenaud/)'s PhD thesis.
 
@@ -57,6 +58,10 @@ Software:
 
 #### 11.15-12.00 Distributed and Subsampling MCMC
 
+Reading: 
+
+- [Slides]() - TBA
+
 ---
 
 #### 12.00-13.15 Lunch
@@ -64,6 +69,10 @@ Software:
 ---
 
 #### 13.15-14.00 Text as data - Topic Models
+
+Reading: 
+
+- [Slides]() - TBA
 
 ---
 
@@ -73,6 +82,10 @@ Software:
 
 #### 14.15-15.00 Variational Bayes
 
+Reading: 
+
+- [Slides]() - TBA
+
 ---
 
 #### 15.00-15.15 Coffee/Tea break
@@ -81,6 +94,14 @@ Software:
 
  
 ##### 15.15-16.00 Deep Learning
+
+Reading: 
+
+- [Slides]() - TBA
+
+Software:
+
+- [Google's TensorFlow](https://www.tensorflow.org/)
 
 ---
 
