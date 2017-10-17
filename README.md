@@ -41,17 +41,14 @@ Extras:
 Reading:
 
 - Chapters 3.1-3.4.1 and 3.7 in [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW.pdf).
-- [https://arxiv.org/pdf/1206.2944.pdf]Practical Bayesian Optimization of Machine Learning Algorithms (NIPS2012)
+- [https://arxiv.org/pdf/1206.2944.pdf](Practical Bayesian Optimization of Machine Learning Algorithms) (NIPS2012)
 
 Software: 
+
 - [GPML](http://www.gaussianprocess.org/gpml/code/matlab/doc/) - Matlab suite for GPs.
 - [GPy](https://sheffieldml.github.io/GPy/) - extensive Python suite for GPs.
 - [Spearmint - Python library for GPO](https://github.com/HIPS/Spearmint)
 - [Bayesian Optimization - Python library for GPO](https://github.com/fmfn/BayesianOptimization)
-
-Code snippets:
-
-
 
 
 #### 11.00-11.15 Coffee/Tea break
