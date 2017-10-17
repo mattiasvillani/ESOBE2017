@@ -1,30 +1,15 @@
-<style>
-.fullgreydiv {
-  background-color: #E8E8EE;
-  padding: 5px 20px;
-}
-</style>
-
 
 ### Machine Learning Models and Methods for Econometricians
-				
-one-day tutorial at
 
-#### European Seminar of Bayesian Econometrics 2017 in Maastricht
+by Mattias Villani, Division of Statistics and Machine Learning, Linköping University
 
 ---
 
+##### 09.00-09.15 Coffee/Tea
 
+---
 
-
-
-<div class="fullgreydiv"> 
-<h4>09.00-09.15 Coffee/Tea</h4>
-</div>
-<hline>
-
-<div class="fullgreydiv"> 
-<h4>09.15-10.00 Gaussian Process Regression</h4>
+##### 09.15-10.00 Gaussian Process Regression
 Reading: 
 
 - Chapters 2.1-2.5 in [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW.pdf).
@@ -45,13 +30,11 @@ Extras:
 
 - [Interactive web app](https://skaae.shinyapps.io/test_project/) for playing around with GPs
 
-</div>
-<hline>
+---
 
-<div class="fullgreydiv"> 
-<h4>10.00-10.15 Break</h4>
-</div>
-<hline>
+#### 10.00-10.15 Break
+
+---
 
 <div class="fullgreydiv"> 
 <h4>10.15-11.00 Gaussian Process Classification and Optimization</h4>
