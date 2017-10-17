@@ -40,53 +40,50 @@ Extras:
 <h4>10.15-11.00 Gaussian Process Classification and Optimization</h4>
 Reading:
 
-- 
+- Chapters 3.1-3.4.1 and 3.7 in [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW.pdf).
+- [https://arxiv.org/pdf/1206.2944.pdf]Practical Bayesian Optimization of Machine Learning Algorithms (NIPS2012)
 
-Software:
+Software: 
+- [GPML](http://www.gaussianprocess.org/gpml/code/matlab/doc/) - Matlab suite for GPs.
+- [GPy](https://sheffieldml.github.io/GPy/) - extensive Python suite for GPs.
+- [Spearmint - Python library for GPO](https://github.com/HIPS/Spearmint)
+- [Bayesian Optimization - Python library for GPO](https://github.com/fmfn/BayesianOptimization)
 
 Code snippets:
 
 
-</div>
-<hline>
 
-<div class="fullgreydiv"> 
-<h4>11.00-11.15 Coffee/Tea break</h4>
-</div>
-<hline>
 
-<div class="fullgreydiv"> 
-<h4>11.15-12.00 Distributed and Subsampling MCMC</h4>
-</div>
-<hline>
+#### 11.00-11.15 Coffee/Tea break
 
-<div class="fullgreydiv"> 
-<h4>12.00-13.15 Lunch</h4>
-</div>
-<hline>
+---
 
-<div class="fullgreydiv"> 
-<h4>13.15-14.00 Text as data - Topic Models</h4>
-</div>
-<hline>
+#### 11.15-12.00 Distributed and Subsampling MCMC
 
-<div class="fullgreydiv"> 
-<h4>14.00-14.15 Break</h4>
-</div>
-<hline>
+---
 
-<div class="fullgreydiv"> 
-<h4>14.15-15.00 Variational Bayes</h4>
-</div>
-<hline>
+#### 12.00-13.15 Lunch
 
-<div class="fullgreydiv"> 
-<h4>15.00-15.15 Coffee/Tea break</h4>
-</div>
-<hline>
+---
 
-<div class="fullgreydiv"> 
-<h4>15.15-16.00 Deep Learning</h4>
-</div>
-<hline>
+#### 13.15-14.00 Text as data - Topic Models
+
+---
+
+#### 14.00-14.15 Break
+
+---
+
+#### 14.15-15.00 Variational Bayes
+
+---
+
+#### 15.00-15.15 Coffee/Tea break
+
+---
+
+ 
+##### 15.15-16.00 Deep Learning
+
+---
 
