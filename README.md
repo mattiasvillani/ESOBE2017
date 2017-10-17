@@ -9,7 +9,7 @@ by Mattias Villani, Division of Statistics and Machine Learning, Linköping Univ
 
 ---
 
-##### 09.15-10.00 Gaussian Process Regression
+#### 09.15-10.00 Gaussian Process Regression
 Reading: 
 
 - [Slides]() - TBA
@@ -33,7 +33,7 @@ Extras:
 
 ---
 
-#### 10.00-10.15 Break
+##### 10.00-10.15 Break
 
 ---
 
@@ -51,7 +51,7 @@ Software:
 - [Bayesian Optimization - Python library for GPO](https://github.com/fmfn/BayesianOptimization)
 - [BayesOpt](https://se.mathworks.com/help/stats/bayesian-optimization-algorithm.html) in the Statistics and Machine Learning Toolbox
 
-#### 11.00-11.15 Coffee/Tea break
+##### 11.00-11.15 Coffee/Tea break
 
 ---
 
@@ -63,7 +63,7 @@ Reading:
 
 ---
 
-#### 12.00-13.15 Lunch
+##### 12.00-13.15 Lunch
 
 ---
 
@@ -77,7 +77,7 @@ Reading:
 - [Topic Models](http://www.cs.columbia.edu/~blei/papers/BleiLafferty2009.pdf) - a survey of the field
 ---
 
-#### 14.00-14.15 Break
+##### 14.00-14.15 Break
 
 ---
 
@@ -94,12 +94,12 @@ Software:
 
 ---
 
-#### 15.00-15.15 Coffee/Tea break
+##### 15.00-15.15 Coffee/Tea break
 
 ---
 
  
-##### 15.15-16.00 Deep Learning
+#### 15.15-16.00 Deep Learning
 
 Reading: 
 
