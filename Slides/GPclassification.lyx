@@ -1718,7 +1718,353 @@ ConvNets - Snoek et al (NIPS, 2012)
 status open
 
 \begin_layout Plain Layout
-GPs can be used everywhere
+GPO in action: Intractable state-space 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dahlin2015efficient"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+State-space model
+\series default
+\color inherit
+ with 
+\series bold
+\color blue
+
+\begin_inset Formula $\alpha$
+\end_inset
+
+-stable noise
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+y_{t} & \sim\mathrm{AlphaStable}\left(y_{t};\alpha,\exp(x_{t})\right)\\
+x_{t} & =\mu+\phi\left(x_{t-1}-\mu\right)+\sigma_{v}\varepsilon_{t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Standard approach for parameter inference in SS models is PMMH.
+ 
+\end_layout
+
+\begin_layout Itemize
+PDF does not exist in closed from for 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-stable.
+ Approximate Bayesian Computation (
+\series bold
+SMC-ABC
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+Posterior evaluations 
+\begin_inset Formula $\log\hat{p}(\theta_{k}\vert y_{1:T})$
+\end_inset
+
+ are costly and noisy.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+GPO
+\series default
+\color inherit
+ attractive as it uses few evaluations of the posterior.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+GPO for normal (Laplace) approximation
+\series default
+\color inherit
+ of the posterior.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+GPO is 60-100 times faster
+\series default
+\color inherit
+ than state-of-the-art PMMH.
+\end_layout
+
+\begin_layout Itemize
+Application to 30-dim Gaussian copula with 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-stable margins.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SMC-ABC-GPO
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SMC-ABC-GPO 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dahlin2015efficient"
+
+\end_inset
+
+:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Compute an 
+\series bold
+estimate of the log posterior
+\series default
+ at a parameter value 
+\begin_inset Formula $\theta_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $z_{k}=\log\hat{p}(\theta_{k}\vert y_{1:T})$
+\end_inset
+
+ using 
+\series bold
+SMC-ABC
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Update the 
+\series bold
+GP surrogate for the log posterior
+\series default
+ using the available (
+\series bold
+noisy
+\series default
+) evaluations 
+\begin_inset Formula $\left\{ \theta_{j},z_{j}\right\} _{j=1}^{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Use the 
+\series bold
+acquisition rule
+\series default
+ to determine the next evaluation point 
+\begin_inset Formula $\theta_{k+1}$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+End result from 1-3: smooth GP surrogate to the log posterior.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Approximate 
+\series bold
+posterior covariance matrix
+\series default
+ is obtained from finite differences of the GP posterior mean function.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sanity check: Linear Gaussian State Space
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/GPOStateSpaceLinearGaussian.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sanity check: Linear Gaussian State Space
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/ConvergenceGPOStateSpaceLinearGaussian.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Analysis of returns from coffee futures
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/CoffeePosteriors.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GPs can be used anywhere
 \end_layout
 
 \end_inset
@@ -1830,6 +2176,142 @@ g_{p}(\mathbf{x})
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GPs can be used anywhere
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+VARs
+\series default
+\color inherit
+ with 
+\series bold
+\color blue
+nonparametric steady state
+\series default
+\color inherit
+ 
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+y_{1t}\\
+\vdots\\
+y_{pt}
+\end{array}\right)=\left(\begin{array}{c}
+\mu_{1}(t)\\
+\vdots\\
+\mu_{p}(t)
+\end{array}\right)+\Pi\left(\left(\begin{array}{c}
+y_{1t}\\
+\vdots\\
+y_{pt}
+\end{array}\right)-\left(\begin{array}{c}
+\mu_{1}(t)\\
+\vdots\\
+\mu_{p}(t)
+\end{array}\right)\right)+\left(\begin{array}{c}
+\varepsilon_{1t}\\
+\vdots\\
+\varepsilon_{pt}
+\end{array}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mu_{j}(t)$
+\end_inset
+
+ is the steady state of 
+\begin_inset Formula $\left\{ y_{jt}\right\} _{t=1}^{T}$
+\end_inset
+
+, and 
+\begin_inset Formula $\mu_{j}(t)\sim GP$
+\end_inset
+
+ a priori.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Nonparametric system identification
+\series default
+\color inherit
+ in state-space models
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =h(x_{t})+v_{t}\\
+x_{t} & =\rho x_{t-1}+w_{t}
+\end{align*}
+
+\end_inset
+
+and 
+\begin_inset Formula $h\sim GP$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Hemodynamics in functional MRI
+\color inherit
+ 
+\series default
+(brain imaging).
+ 
+\begin_inset Formula $h\sim GP(\mu_{Physio},K)$
+\end_inset
+
+, where 
+\begin_inset Formula $\mu_{Physio}$
+\end_inset
+
+ is a simplified physiological model for blood flows.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "ref"
+options "bibtotoc,ieeetr"
+
 \end_inset
 
 
