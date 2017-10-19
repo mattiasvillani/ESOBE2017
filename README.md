@@ -12,7 +12,7 @@ by Mattias Villani, Division of Statistics and Machine Learning, Linköping Univ
 #### 09.15-10.00 Gaussian Process Regression
 Reading: 
 
-- [Slides]() - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/GPregression.pdf)
 - Chapters 2.1-2.5 in [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW.pdf).
 - Chapter on [kernels](https://raw.githubusercontent.com/duvenaud/phd-thesis/master/kernels.pdf) from [David Duvenaud](http://www.cs.toronto.edu/~duvenaud/)'s PhD thesis.
 
@@ -40,6 +40,7 @@ Extras:
 #### 10.15-11.00 Gaussian Process Classification and Optimization
 Reading:
 
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/GPclassification.pdf)
 - Chapters 3.1-3.4.1 and 3.7 in [Gaussian Processes for Machine Learning](http://www.gaussianprocess.org/gpml/chapters/RW.pdf).
 - [Practical Bayesian Optimization of Machine Learning Algorithms](https://arxiv.org/pdf/1206.2944.pdf) (NIPS2012)
 
