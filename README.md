@@ -50,6 +50,7 @@ Software:
 - [Spearmint - Python library for GPO](https://github.com/HIPS/Spearmint)
 - [Bayesian Optimization - Python library for GPO](https://github.com/fmfn/BayesianOptimization)
 - [BayesOpt](https://se.mathworks.com/help/stats/bayesian-optimization-algorithm.html) in the Statistics and Machine Learning Toolbox
+- [RStan](https://betanalpha.github.io/assets/case_studies/gp_part1/part1.html) 
 
 ##### 11.00-11.15 Coffee/Tea break
 
