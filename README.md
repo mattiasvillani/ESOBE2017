@@ -20,7 +20,7 @@ Software:
 
 - [Kernlab](https://cran.r-project.org/web/packages/kernlab/index.html) - R package for GPs. Quick [demo](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/KernLabDemo.R).
 - [GPML](http://www.gaussianprocess.org/gpml/code/matlab/doc/) - Matlab suite for GPs.
-- [Matlab's GP fitting](https://se.mathworks.com/help/stats/gaussian-process-regression.html) in the Statistics and Machine Learning Toolbox. Very quick [demo](https://github.com/mattiasvillani/ESOBE2017/blob/master/Code/MatlabGPexample.m). 
+- [Matlab's GP fitting](https://se.mathworks.com/help/stats/gaussian-process-regression.html) in the Statistics and Machine Learning Toolbox. Very quick [demo](https://github.com/mattiasvillani/ESOBE2017//master/Code/MatlabGPexample.m). 
 - [GPy](https://sheffieldml.github.io/GPy/) - extensive Python suite for GPs.
 
 Code snippets:
@@ -61,7 +61,7 @@ Software:
 
 Reading: 
 
-- [Slides]() - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/Graphics/NothingToSee.jpg) - TBA
 
 ---
 
@@ -73,7 +73,7 @@ Reading:
 
 Reading: 
 
-- [Slides]() - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/Graphics/NothingToSee.jpg) - TBA
 - [Probabilistic Topic Models](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf) - a non-technical intro to topic models
 - [Latent Dirichlet Allocation](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) - the original paper
 - [Topic Models](http://www.cs.columbia.edu/~blei/papers/BleiLafferty2009.pdf) - a survey of the field
@@ -87,7 +87,7 @@ Reading:
 
 Reading: 
 
-- [Slides]() - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/Graphics/NothingToSee.jpg) - TBA
 - [Variational Inference: A Review for Statisticians](https://arxiv.org/abs/1601.00670) (JASA2017)
 
 Software:
@@ -105,7 +105,7 @@ Software:
 
 Reading: 
 
-- [Slides]() - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/Graphics/NothingToSee.jpg) - TBA
 - Chapters 1,4,5 and 6 of [Deep Learning](http://www.deeplearningbook.org/) - the main book for deep learning.
 
 Software:
