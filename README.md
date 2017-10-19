@@ -79,6 +79,11 @@ Reading:
 - [Topic Models](http://www.cs.columbia.edu/~blei/papers/BleiLafferty2009.pdf) - a survey of the field
 ---
 
+Software:
+
+- Mallet R package [CRAN version](https://cran.r-project.org/web/packages/mallet/) or more refined [GitHub repo](https://github.com/MansMeg/RMallet)
+- [gensim](https://radimrehurek.com/gensim/) - Python module.
+
 ##### 14.00-14.15 Break
 
 ---
