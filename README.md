@@ -93,7 +93,7 @@ Software:
 
 Reading: 
 
-- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/VariationalInference.pdf) - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/VariationalInference.pdf)
 - [Explaining Variational Approximations](http://www.maths.usyd.edu.au/u/jormerod/JTOpapers/Ormerod10.pdf) (Amer Stat)
 - [Variational Inference: A Review for Statisticians](https://arxiv.org/abs/1601.00670) (JASA2017)
 
