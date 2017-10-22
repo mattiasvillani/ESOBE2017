@@ -1,0 +1,2830 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+
+\usepackage[ruled]{algorithm2e}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ML for Econometrics
+\end_layout
+
+\end_inset
+
+ML for Econometricians
+\begin_inset Newline newline
+\end_inset
+
+Variational Inference
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Variational Inference
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Mean-field variational inference
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Stochastic Variational Inference
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Black-Box Variational Inference
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Variational Inference (VI)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\theta=(\theta_{1},...,\theta_{p})^{T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Aim: 
+\series bold
+\color blue
+approximate posterior
+\series default
+\color inherit
+ 
+\begin_inset Formula $p(\theta|y)$
+\end_inset
+
+ with a simpler distribution 
+\begin_inset Formula $q(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Normal approximation
+\series default
+: 
+\begin_inset Formula $q(\theta)=N\left[\tilde{\theta},-H^{-1}(\tilde{\theta})\right]$
+\end_inset
+
+, where 
+\begin_inset Formula $\tilde{\theta}$
+\end_inset
+
+ is the mode, and 
+\begin_inset Formula $H^{-1}(\tilde{\theta})$
+\end_inset
+
+ Hessian of log posterior at 
+\begin_inset Formula $\tilde{\theta}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Normal approximation 
+\series bold
+\color blue
+turns an inference problem into an optimization problem
+\series default
+\color inherit
+.
+ VI does the same.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Variational Inference
+\series default
+\color inherit
+: find 
+\begin_inset Formula $q(\theta)\in\mathcal{Q}$
+\end_inset
+
+ that is closest to the posterior 
+\begin_inset Formula $p(\theta\vert\mathbf{x})$
+\end_inset
+
+ in Kullback-Leibler sense
+\begin_inset Formula 
+\[
+q^{\star}(\theta)=\underset{q(\theta)\in\mathcal{Q}}{\arg\min}\;\mathrm{KL}\left[q(\theta)\vert\vert p(\theta\vert\mathbf{x})\right]
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+\mathrm{KL}\left[q(\theta)\vert\vert p(\theta\vert\mathbf{x})\right]=\mathbb{E}_{q(\theta)}\log\left(\frac{q(\theta)}{p(\theta\vert\mathbf{x})}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Variational Inference (VI)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But ...
+ 
+\begin_inset Formula 
+\[
+\mathrm{KL}\left[q(\theta)\vert\vert p(\theta\vert\mathbf{x})\right]=\mathbb{E}_{q(\theta)}\log q(\theta)-\mathbb{E}_{q(\theta)}\log p(\theta\vert\mathbf{x})
+\]
+
+\end_inset
+
+is intractable since 
+\begin_inset Formula $\mathbb{E}_{q(\theta)}\log p(\theta\vert\mathbf{x})=\mathbb{E}_{q(\theta)}\log p(\mathbf{x},\theta)-\textcolor{red}{\log p(\mathbf{x})}$
+\end_inset
+
+.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But 
+\begin_inset Formula $\log p(x)$
+\end_inset
+
+ is just a constant, so we can instead maximize 
+\series bold
+Evidence Lower BOund
+\series default
+ (
+\series bold
+ELBO
+\series default
+):
+\begin_inset Formula 
+\[
+\mathrm{ELBO}(q)=\mathbb{E}_{q(\theta)}\log p(\mathbf{x},\theta)-\mathbb{E}_{q(\theta)}\log q(\theta)
+\]
+
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ELBO is a lower bound for the (log) evidence (marginal likelihood) since
+ 
+\begin_inset Formula $\mathrm{KL}\geq0$
+\end_inset
+
+ and
+\begin_inset Formula 
+\[
+\log p(\mathbf{x})=\mathrm{KL}\left[q(\theta)\vert\vert p(\theta\vert\mathbf{x})\right]+\mathrm{ELBO}(q).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Forward KL vs Backward KL.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mean field approximation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+VI turns inference into a optimization problem
+\begin_inset Formula 
+\[
+q^{\star}(\theta)=\underset{q(\theta)\in\mathcal{Q}}{\arg\max}\;\mathrm{ELBO}(q)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Large 
+\begin_inset Formula $\mathcal{Q}$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ accurate approximation, hard optimization.
+\end_layout
+
+\begin_layout Itemize
+Small 
+\begin_inset Formula $\mathcal{Q}$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ crude approximation, easy optimization.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Mean-field Variational Inference
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+MFVI
+\series default
+\color inherit
+) uses the factorization
+\begin_inset Formula 
+\[
+q(\theta)=\prod_{i=1}^{p}q_{i}(\theta_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+No specific functional forms are assumed
+\series default
+ for the 
+\begin_inset Formula $q_{i}(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Optimal densities
+\series default
+\color inherit
+ can be shown to satisfy 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ormerod2010explaining"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+q_{i}(\theta)\propto\exp\left(E_{-\theta_{i}}\ln p(\mathbf{y},\theta)\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{-\theta_{i}}(\cdot)$
+\end_inset
+
+ is the expectation with respect to 
+\begin_inset Formula $\prod_{i\neq j}q_{j}(\theta_{j})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Equivalent form with full conditionals
+\begin_inset Formula 
+\[
+q_{i}(\theta)\propto\exp\left(E_{-\theta_{i}}\ln p(\theta_{i}\vert\theta_{-i},\mathbf{y})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Ascent Variational Inference
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm}[H]     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwInput{A model $p(
+\backslash
+mathbf{x},
+\backslash
+theta)$, a data set $
+\backslash
+mathbf{x}$, initial variational factors $ q_j(
+\backslash
+theta_j)$}            
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+While{$
+\backslash
+mathrm{ELBO}$ has not converged}{
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+For{$j 
+\backslash
+in 
+\backslash
+{1,...,p
+\backslash
+}$}{    
+\end_layout
+
+\begin_layout Plain Layout
+
+			Set $q_j(
+\backslash
+theta_j) 
+\backslash
+propto 
+\backslash
+exp 
+\backslash
+{ 
+\backslash
+mathbb{E}_{-j} 
+\end_layout
+
+\begin_layout Plain Layout
+
+			p(
+\backslash
+theta_j 
+\backslash
+vert 
+\backslash
+theta_{-j},
+\backslash
+mathbf{x})
+\backslash
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	    }
+\end_layout
+
+\begin_layout Plain Layout
+
+	Compute $
+\backslash
+mathrm{ELBO}(q) = 
+\backslash
+mathbb{E}[
+\backslash
+log p(
+\backslash
+mathbf{x},
+\backslash
+theta)]+
+\backslash
+mathbb{E}[
+\backslash
+log q(
+\backslash
+theta)]$
+\end_layout
+
+\begin_layout Plain Layout
+
+	}   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwOutput{A mean-field variational density $q(
+\backslash
+theta) = 
+\backslash
+prod_{j=1}^p q_j(
+\backslash
+theta_j)$  } 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+BlankLine 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Coordinate Ascent Variational Inference (CAVI)}    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optimal 
+\begin_inset Formula $q_{i}(\theta)$
+\end_inset
+
+ often turn out to be parametric (normal, gamma etc).
+ 
+\end_layout
+
+\begin_layout Itemize
+Updates become just an 
+\series bold
+updating of variational hyperparameters
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+See 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "blei2017variational"
+
+\end_inset
+
+ for details for exponential families.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mean-field VI - Bivariate Normal
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bivariate normal model: 
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+x_{1i}\\
+x_{2i}
+\end{array}\right)\overset{iid}{\sim}N\left[\left(\begin{array}{c}
+\mu_{1}\\
+\mu_{2}
+\end{array}\right),\rho I\right],\;i=1,...,n
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is known.
+ Indep normal prior.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Prior
+\series default
+: 
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\mu_{1}\\
+\mu_{2}
+\end{array}\right)\overset{iid}{\sim}N\left[\left(\begin{array}{c}
+0\\
+0
+\end{array}\right),0.25^{2}I\right].
+\]
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Exact posterior by well known formulas:
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\mu_{1}\\
+\mu_{2}
+\end{array}\right)\vert\mathbf{x}_{1},..,\mathbf{x}_{n}\overset{iid}{\sim}N\left(\tilde{\mu},\tilde{\Omega}^{-1}\right),
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\tilde{\Omega}=\left(\begin{array}{cc}
+\omega_{1}^{2} & \omega_{12}\\
+\omega_{12} & \omega_{2}^{2}
+\end{array}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mean-field VI - Bivariate Normal
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Exact posterior by well known formulas:
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\mu_{1}\\
+\mu_{2}
+\end{array}\right)\vert\mathbf{x}_{1},..,\mathbf{x}_{n}\overset{iid}{\sim}N\left(\mathbf{m},\Omega^{-1}\right),
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\Omega=\left(\begin{array}{cc}
+\omega_{1}^{2} & \omega_{12}\\
+\omega_{12} & \omega_{2}^{2}
+\end{array}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mean-field approximation
+\series default
+: 
+\begin_inset Formula $q(\mu_{1},\mu_{2})=q_{1}(\mu_{1})q_{2}(\mu_{2})$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Find optimal mean-field VI solution by iterating on 
+\begin_inset Formula $\tilde{\mu}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{\mu}_{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+q_{1}^{\star}(\mu_{1}) & \propto\exp\left[E_{q_{2}(\mu_{2})}\ln p(\mu_{1}\vert\mu_{2},\mathbf{x})\right]=N\left(\tilde{\mu}_{1},\frac{1}{\omega_{1}^{2}}\right)\\
+q_{2}^{\star}(\mu_{2}) & \propto\exp\left[E_{q_{1}(\mu_{1})}\ln p(\mu_{2}\vert\mu_{1},\mathbf{x})\right]=N\left(\tilde{\mu}_{2},\frac{1}{\omega_{2}^{2}}\right)
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\tilde{\mu}_{1}=m_{1}-\frac{\omega_{12}}{\omega_{1}^{2}}(\textcolor{red}{\tilde{\mu}_{2}}-m_{2})$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{\mu}_{2}=m_{2}-\frac{\omega_{12}}{\omega_{2}^{2}}(\textcolor{red}{\tilde{\mu}_{1}}-m_{1})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mean-field VI - Normal data with 
+\begin_inset Formula $\rho=0.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Graphics
+	filename Graphics/VBjointWeaklyCorrelatedNormalData.eps
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/VBmarginalWeaklyCorrelatedNormalData.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mean-field VI - Normal data with 
+\begin_inset Formula $\rho=0.9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Graphics
+	filename Graphics/VBjointCorrelatedNormalData.eps
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/VBmarginalCorrelatedNormalData.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mean-field VI - Univariate normal data with unknown variance
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Model
+\series default
+: 
+\begin_inset Formula $X_{i}|\theta,\sigma^{2}\overset{iid}{\sim}N(\theta,\sigma^{2})$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Prior
+\series default
+: 
+\begin_inset Formula $\theta\sim N(\mu_{0},\tau_{0}^{2})$
+\end_inset
+
+ 
+\series bold
+independent
+\series default
+ of 
+\begin_inset Formula $\sigma^{2}\sim Inv-\chi^{2}(\nu_{0},\sigma_{0}^{2})$
+\end_inset
+
+.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mean-field approximation
+\series default
+: 
+\begin_inset Formula $q(\theta,\sigma^{2})=q_{\theta}(\theta)\cdot q_{\sigma^{2}}(\sigma^{2})$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Optimal densities
+\begin_inset Formula 
+\begin{align*}
+q_{\theta}^{*}(\theta) & \propto\exp\left[E_{q(\sigma^{2})}\ln p(\theta,\sigma^{2},\mathbf{x})\right]\\
+q_{\sigma^{2}}^{*}(\sigma^{2}) & \propto\exp\left[E_{q(\theta)}\ln p(\theta,\sigma^{2},\mathbf{x})\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Normal model - VI algorithm 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Variational density for 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula 
+\[
+\sigma^{2}\sim Inv-\chi^{2}\left(\tilde{\nu}_{n},\tilde{\sigma}_{n}^{2}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\tilde{\nu}_{n}=\nu_{0}+n$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{\sigma}_{n}=\frac{\nu_{0}\sigma_{0}^{2}+\sum_{i=1}^{n}(x_{i}-\textcolor{red}{\tilde{\mu}_{n}})^{2}+n\cdot\textcolor{red}{\tilde{\tau}_{n}^{2}}}{\nu_{0}+n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Variational density for 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula 
+\[
+\theta\sim N\left(\tilde{\mu}_{n},\tilde{\tau}_{n}^{2}\right)
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\tilde{\tau}_{n}^{2}=\frac{1}{\frac{n}{\textcolor{red}{\tilde{\sigma}_{n}^{2}}}+\frac{1}{\tau_{0}^{2}}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\mu}_{n}=\tilde{w}\bar{x}+(1-\tilde{w})\mu_{0},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+\tilde{w}=\frac{\frac{n}{\textcolor{red}{\tilde{\sigma}_{n}^{2}}}}{\frac{n}{\textcolor{red}{\tilde{\sigma}_{n}^{2}}}+\frac{1}{\tau_{0}^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Normal example from Murphy 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "murphy2012machine"
+
+\end_inset
+
+ (
+\begin_inset Formula $\lambda=1/\sigma^{2}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Initial values
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+After updating 
+\begin_inset Formula $q_{\mu}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphics/unigaussVbDemo1.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphics/unigaussVbDemo2.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+After updating 
+\begin_inset Formula $q_{\sigma^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+At convergence
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphics/unigaussVbDemo3.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphics/unigaussVbDemo4.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probit regression 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Model
+\series default
+: 
+\begin_inset Formula 
+\[
+\mathrm{Pr}\left(y_{i}=1|\mathbf{x}_{i}\right)=\Phi(\mathbf{x}_{i}^{T}\beta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Prior
+\series default
+: 
+\begin_inset Formula $\beta\sim N(0,\Sigma_{\beta})$
+\end_inset
+
+.
+ For example: 
+\begin_inset Formula $\Sigma_{\beta}=\tau^{2}I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Latent variable formulation
+\series default
+ with 
+\begin_inset Formula $u=(u_{1},...,u_{n})'$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbf{u}|\beta\sim N(\mathbf{X}\beta,1)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align*}
+y_{i} & =\begin{cases}
+0 & \text{if }u_{i}\leq0\\
+1 & \text{if }u_{i}>0
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Factorized 
+\series bold
+variational approximation
+\series default
+
+\begin_inset Formula 
+\[
+q(\mathbf{u},\beta)=q_{\mathbf{u}}(\mathbf{u})q_{\beta}(\beta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+VI for probit regression 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ormerod2010explaining"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+VI posterior
+\begin_inset Formula 
+\[
+\beta\sim N\left(\tilde{\mu}_{\beta},\left(\mathbf{X}^{T}\mathbf{X}+\Sigma_{\beta}^{-1}\right)^{-1}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+\tilde{\mu}_{\beta}=\left(\mathbf{X}^{T}\mathbf{X}+\Sigma_{\beta}^{-1}\right)^{-1}\mathbf{X}^{T}\textcolor{red}{\tilde{\mu}_{\mathbf{u}}}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+\tilde{\mu}_{\mathbf{u}}=\mathbf{X}\textcolor{red}{\tilde{\mu}_{\beta}}+\frac{\phi\left(\mathbf{X}\textcolor{red}{\tilde{\mu}_{\beta}}\right)}{\Phi\left(\mathbf{X}\textcolor{red}{\tilde{\mu}_{\beta}}\right)^{\mathbf{y}}\left[\Phi\left(\mathbf{X}\textcolor{red}{\tilde{\mu}_{\beta}}\right)-\mathbf{1}_{n}\right]^{\mathbf{1}_{n}-\mathbf{y}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probit example (n=200 observations) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\begin_inset Graphics
+	filename Graphics/Probit_MCMCvsVB.eps
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probit example - ELBO
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\begin_inset Graphics
+	filename Graphics/Probit_LowerBound.eps
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Spatial neuroimaging - MCMC vs Mean-field 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "siden2017fast"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\begin_inset Graphics
+	filename Graphics/MCMCvsIVB.pdf
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Spatial neuroimaging - MCMC vs VI 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "siden2017fast"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\series bold
+\begin_inset Graphics
+	filename Graphics/MCMCvsSVB.pdf
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+VI for latent variable models 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "blei2017variational"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Example: 
+\series bold
+\color blue
+Normal mixture model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(x_{i})=\sum_{k=1}^{K}\pi_{k}N(\mu_{k},\sigma_{k}^{2})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+z_{i}\sim\mathrm{Categorical}(\pi_{1},...\pi_{K})\quad and\quad x_{i}\vert z_{i}\overset{indep}{\sim}N(\mu_{z_{i}},\sigma_{z_{i}}^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Global variables
+\series default
+\color inherit
+ (parameters): 
+\begin_inset Formula $\theta=(\mu_{1:K},\sigma_{1:K},\pi_{1:K})^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Local parameters
+\series default
+\color inherit
+ (latent variables): 
+\begin_inset Formula $\mathbf{z}=(z_{1},...,z_{n})^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+CAVI:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(for 
+\begin_inset Formula $i=1,...n$
+\end_inset
+
+) Update 
+\begin_inset Formula $q_{\varphi_{i}}(z_{i})$
+\end_inset
+
+ wrt local variational parameters 
+\begin_inset Formula $\varphi_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Update 
+\begin_inset Formula $q_{\lambda}(\theta)$
+\end_inset
+
+ wrt global variational parameter 
+\begin_inset Formula $\lambda$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Explicit updates for exponential family models.
+\end_layout
+
+\begin_layout Itemize
+Slow for large 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CAVI for mixture of normals 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "blei2017variational"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/CAVI_MoN.pdf
+	scale 72
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stochastic Variational Inference (SVI) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hoffman2013stochastic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conditionally conjugate models with (local) latent variables.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Aim: variational approximation for global variables 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Coordinate ascent is replaced by 
+\series bold
+\color blue
+gradient-based optimization
+\series default
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+CAVI + Stochastic optimization
+\series default
+\color inherit
+ with noisy gradients
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Unbiased estimate of the gradient from a 
+\series bold
+\color blue
+minibatch
+\series default
+\color inherit
+ of observations.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Only need to update the variational for latents corresponding to observations
+ in the minibatch.
+ Fast.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Black Box Variational Inference (BBVI)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mean-field makes 
+\begin_inset Formula $\mathcal{Q}$
+\end_inset
+
+ conveniently small, but the approximation can be poor.
+ Especially for the variance.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Recent push to use more expressive 
+\begin_inset Formula $q\in\mathcal{Q}$
+\end_inset
+
+ approximations.
+ Harder optimization.
+ 
+\begin_inset Formula $\mathbb{E}_{q}$
+\end_inset
+
+ often intractable.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+BBVI also called 
+\series bold
+\color blue
+doubly-stochastic
+\series default
+\color inherit
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+BBVI approximates 
+\begin_inset Formula $\mathbb{E}_{q}$
+\end_inset
+
+ by 
+\series bold
+Monte Carlo integration
+\series default
+.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Gradient-based 
+\series bold
+stochastic optimization
+\series default
+ with unbiased estimates of the gradients.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Black Box Variational Inference (BBVI)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "titsias2014doubly"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume: 
+\begin_inset Formula $q_{\mu,\mathbf{C}}(\theta)=N(\theta\vert\mu,\mathbf{CC}^{T})$
+\end_inset
+
+.
+ Optimize over 
+\begin_inset Formula $\mu\in\mathbb{R}^{p}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+, a lower-triangular positive definite matrix.
+\end_layout
+
+\begin_layout Itemize
+More generally, assume VI approximation of 
+\begin_inset Formula $p(\theta\vert\mathbf{x})\approx q_{\mu,\mathbf{C}}(\theta)$
+\end_inset
+
+ from correlating a standard random vector 
+\begin_inset Formula $\mathbf{z}$
+\end_inset
+
+ with density 
+\begin_inset Formula $\phi(\mathbf{z})$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\theta=\mu+\mathbf{C}\mathbf{z}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example: if 
+\begin_inset Formula $\mathbf{z}\sim N(\mathbf{0},\mathbf{I})$
+\end_inset
+
+, then 
+\begin_inset Formula $q_{\mu,\mathbf{C}}(\theta)=N(\theta\vert\mu,\mathbf{CC}^{T})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Generally, by the change-of-variable formula
+\begin_inset Formula 
+\[
+q_{\mu,\mathbf{C}}(\theta)=\frac{1}{\left|\mathbf{C}\right|}\phi\left(\mathbf{C}^{-1}(\theta-\mu)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Using the change of variable formula:
+\begin_inset Formula 
+\begin{align*}
+\mathrm{ELBO}(\mu,\mathbf{C}) & =\mathbb{E}_{q(\theta)}\log p(\mathbf{x},\theta)-\mathbb{E}_{q(\theta)}\log q(\theta)\\
+ & =\mathbb{E}_{\phi(\mathbf{z})}\log p(\mathbf{x},\mu+\mathbf{C}\mathbf{z})+\log\left|\mathbf{C}\right|+H_{\phi},
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\log\mathbf{C}=\sum_{j=1}^{p}\log C_{jj}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{\phi}$
+\end_inset
+
+ is the entropy of 
+\begin_inset Formula $\phi(\mathbf{z})$
+\end_inset
+
+, which is constant wrt 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Black Box Variational Inference (BBVI)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "titsias2014doubly"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From previous slide:
+\begin_inset Formula 
+\begin{align*}
+\mathrm{ELBO}(\mu,\mathbf{C}) & =\mathbb{E}_{\phi(\mathbf{z})}\log p(\mathbf{x},\mu+\mathbf{C}\mathbf{z})+\log\left|\mathbf{C}\right|+H_{\phi}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Gradient-based optimization.
+ 
+\series bold
+\color blue
+Swapping order of 
+\begin_inset Formula $\nabla$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{E}$
+\end_inset
+
+
+\series default
+\color inherit
+.
+\begin_inset Formula 
+\begin{align*}
+\nabla_{\mu}\mathrm{ELBO}(\mu,\mathbf{C}) & =\mathbb{E}_{\phi(\mathbf{z})}\left[\nabla_{\mu}\log p(\mathbf{x},\mu+\mathbf{C}\mathbf{z})\right]\\
+\nabla_{\mathbf{C}}\mathrm{ELBO}(\mu,\mathbf{C}) & =\mathbb{E}_{\phi(\mathbf{z})}\left[\nabla_{\mathbf{C}}\log p(\mathbf{x},\mu+\mathbf{C}\mathbf{z})\right]+\Delta_{\mathbf{C}}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Delta_{\mathbf{C}}\equiv\mathrm{diag}(1/c_{11},...,1/c_{pp})$
+\end_inset
+
+ and 
+\begin_inset Formula $\nabla_{\mathbf{C}}\log p(\mathbf{x},\mu+\mathbf{C}\mathbf{z})$
+\end_inset
+
+ a lower triangular matrix with partial derivatives.
+\end_layout
+
+\begin_layout Itemize
+We can change back to 
+\begin_inset Formula $\theta$
+\end_inset
+
+ to get alternative expressions:
+\begin_inset Formula 
+\begin{align*}
+\nabla_{\mu}\mathrm{ELBO}(\mu,\mathbf{C}) & =\mathbb{E}_{q(\theta\vert\mu,\mathbf{C})}\left[\nabla_{\theta}\log p(\mathbf{x},\theta)\right]\\
+\nabla_{\mathbf{C}}\mathrm{ELBO}(\mu,\mathbf{C}) & =\mathbb{E}_{q(\theta\vert\mu,\mathbf{C})}\left[\nabla_{\theta}\log p(\mathbf{x},\theta)(\theta-\mu)^{T}\mathbf{C}^{-T}\right]+\Delta_{\mathbf{C}}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\nabla_{\theta}\log p(\mathbf{x},\theta)\mathbf{z}^{T}$
+\end_inset
+
+ is the lower triangular part after outer product.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Doubly Stochastic Variational Inference 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "titsias2014doubly"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm}[H]     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwInput{A gradient function $
+\backslash
+nabla_{
+\backslash
+theta}
+\backslash
+log p(
+\backslash
+mathbf{x},
+\backslash
+theta)$, a simulator $
+\backslash
+phi(
+\backslash
+mathbf{z})$, a data set $
+\backslash
+mathbf{x}$, initial values $
+\backslash
+mu^{0}$, $
+\backslash
+mathbf{C}^{0}$, learning rate $
+\backslash
+{
+\backslash
+rho_t 
+\backslash
+}_{t
+\backslash
+geq 1}$.}
+\end_layout
+
+\begin_layout Plain Layout
+
+	Set $t=0$     
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+While{convergence criterion not met}{
+\end_layout
+
+\begin_layout Plain Layout
+
+		$t = t + 1$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+mathbf{z} 
+\backslash
+sim 
+\backslash
+phi(
+\backslash
+mathbf{z})$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+theta^{(t-1)} = 
+\backslash
+mathbf{C}^{(t-1)}
+\backslash
+mathbf{z} + 
+\backslash
+mu^{(t-1)}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	    
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+mu^{(t)} = 
+\backslash
+mu^{(t-1)} + 
+\backslash
+rho_t 
+\backslash
+nabla_{
+\backslash
+theta}
+\backslash
+log p(
+\backslash
+mathbf{x},
+\backslash
+theta^{(t-1)}) $
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+mathbf{C}^{(t)} = 
+\backslash
+mathbf{C}^{(t-1)} + 
+\backslash
+rho_t 
+\backslash
+big( 
+\backslash
+nabla_{
+\backslash
+theta}
+\backslash
+log p(
+\backslash
+mathbf{x},
+\backslash
+theta^{(t-1)})
+\backslash
+times 
+\backslash
+mathbf{z}^T + 
+\backslash
+Delta_{
+\backslash
+mathbf{C}^{(t-1)}}
+\backslash
+big)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	}   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwOutput{Optimal variational parameters $
+\backslash
+mu^{
+\backslash
+star}$ and $
+\backslash
+mathbf{C}^{
+\backslash
+star}$.} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+BlankLine 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Doubly Stochastic Variational Inference (DSVI)}    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Extensions of BBVI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Replacing covariance matrix 
+\begin_inset Formula $\mathbf{CC}^{T}$
+\end_inset
+
+ in 
+\begin_inset Formula $q_{\mu,\mathbf{C}}(\theta)=N(\theta\vert\mu,\mathbf{CC}^{T})$
+\end_inset
+
+ by 
+\series bold
+\color blue
+sparse precision matrix
+\series default
+\color inherit
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tan2017gaussian"
+
+\end_inset
+
+.
+ Very useful for models with sparse conditional dependence structure.
+ Spatial.
+ State-space.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Modeling the variational covariance matrix by 
+\series bold
+\color blue
+factor structure
+\series default
+\color inherit
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ong2017gaussian"
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Variational autoencoders
+\series default
+\color inherit
+.
+ 
+\begin_inset Formula $q_{\mu,\mathbf{C}}(\theta)=N(\theta\vert\mu(\mathbf{x}),\Sigma(\mathbf{x}))$
+\end_inset
+
+, where mean and covariance is a deep neural network.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kingma2013auto"
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Beyond Gaussian VI
+\series default
+\color inherit
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Copula VI 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tran2015copula"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Gaussian processes VI 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tran2015variational"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Normalizing flows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rezende2015variational"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Variational Sequential Monte Carlo
+\series bold
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "naesseth2017variational"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+...
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "ref"
+options "bibtotoc,ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
