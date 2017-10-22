@@ -74,7 +74,7 @@ Reading:
 
 Reading: 
 
-- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/Graphics/NothingToSee.jpg) - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/TopicModels.pdf)
 - [Probabilistic Topic Models](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf) - a non-technical intro to topic models
 - [Latent Dirichlet Allocation](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) - the original paper
 - [Topic Models](http://www.cs.columbia.edu/~blei/papers/BleiLafferty2009.pdf) - a survey of the field
