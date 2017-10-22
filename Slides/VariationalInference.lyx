@@ -2792,9 +2792,22 @@ key "rezende2015variational"
 Variational Sequential Monte Carlo
 \series bold
  
+\series default
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "naesseth2017variational"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+General VI with unbiased gradient estimates 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gunawan2017fast"
 
 \end_inset
 
