@@ -1,0 +1,3138 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+
+\usepackage[ruled]{algorithm2e}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ML for Econometrics
+\end_layout
+
+\end_inset
+
+
+\series medium
+
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+ML for Econometricians
+\begin_inset Newline newline
+\end_inset
+
+Subsampling MCMC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+Lecture Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Data subsampling
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+MCMC subsampling approaches
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why data subsampling?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Big data
+\series default
+\color inherit
+.
+ Data sets are getting bigger and bigger.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian inference
+\series default
+\color inherit
+ is the way to go.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bayesian inference is usually implemented using MCMC.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+MCMC
+\series default
+\color inherit
+ can be very 
+\series bold
+\color blue
+slow
+\series default
+\color inherit
+ on large data sets.
+ Evaluate the data density for each observation.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+likelihood can be costly
+\series default
+\color inherit
+ to evaluate (also on small data).
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MCMC - the basic idea
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Explore complicated joint posterior distributions 
+\begin_inset Formula $p(\theta\vert\mathbf{y})$
+\end_inset
+
+ by 
+\series bold
+\color blue
+simulation
+\series default
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Set up 
+\series bold
+\color blue
+Markov chain
+\series default
+\color inherit
+ 
+\begin_inset Formula $\theta^{(i)}\vert\theta^{(i-1)}$
+\end_inset
+
+ for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ with 
+\begin_inset Formula $p(\theta\vert\mathbf{y})$
+\end_inset
+
+ as 
+\series bold
+\color blue
+stationary distribution
+\series default
+\color inherit
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Draw are 
+\series bold
+\color blue
+autocorrelated ...
+\series default
+\color inherit
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+...but sample averages (
+\begin_inset Formula $\bar{\theta}=N^{-1}\sum_{i=1}^{N}\theta^{(i)}$
+\end_inset
+
+) still converge to posterior expectations (
+\begin_inset Formula $E(\theta\vert\mathbf{y})$
+\end_inset
+
+).
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+High autocorrelation means fewer 
+\series bold
+\color blue
+effective
+\series default
+ 
+\series bold
+draws
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+Var(\bar{\theta})=\frac{\sigma^{2}}{N}\left(1+2\sum_{k=1}^{\infty}\rho_{k}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Metropolis-Hastings algorithm
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "95col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Itemize
+Initialize 
+\begin_inset Formula $\theta^{(0)}$
+\end_inset
+
+ and iterate for 
+\begin_inset Formula $i=1,2,...$
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Sample 
+\begin_inset Formula $\theta_{p}\sim q\left(\cdot\vert\theta^{(i-1)}\right)$
+\end_inset
+
+ (the 
+\series bold
+\color blue
+proposal
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+distribution
+\series default
+\color inherit
+)
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Compute the 
+\series bold
+\color blue
+acceptance probability
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\alpha=\min\left(1,\frac{p(\mathbf{y}\vert\theta_{p})p(\theta_{p})}{p(\mathbf{y}\vert\theta^{(i-1)})p(\theta^{(i-1)})}\frac{q\left(\theta^{(i-1)}\vert\theta_{p}\right)}{q\left(\theta_{p}\vert\theta^{(i-1)}\right)}\right)
+\]
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+With probability 
+\begin_inset Formula $\mbox{\alpha}$
+\end_inset
+
+ set 
+\begin_inset Formula $\theta^{(i)}=\theta_{p}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta^{(i)}=\theta^{(i-1)}$
+\end_inset
+
+ otherwise.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MCMC with an unbiased likelihood estimator
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+full likelihood
+\series default
+\color inherit
+ 
+\begin_inset Formula $p(\mathbf{y}|\theta)$
+\end_inset
+
+ is 
+\series bold
+\color blue
+intractable
+\series default
+\color inherit
+ or very 
+\series bold
+\color blue
+costly to evaluate
+\series default
+\color inherit
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Unbiased estimator
+\series default
+ 
+\color inherit
+
+\begin_inset Formula $\hat{p}(\mathbf{y}|\theta,\mathbf{u})$
+\end_inset
+
+ of the likelihood is available
+\begin_inset Formula 
+\[
+\int\hat{p}(\mathbf{y}|\theta,\mathbf{u})p(\mathbf{u})d\mathbf{u}=p(\mathbf{y}|\theta)
+\]
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $u\sim p(u)$
+\end_inset
+
+ are auxilliary variables used to compute 
+\begin_inset Formula $\hat{p}(\mathbf{y}|\theta,\mathbf{u})$
+\end_inset
+
+.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Subsampling
+\series default
+\color inherit
+: 
+\begin_inset Formula $\mathbf{u}$
+\end_inset
+
+ are indicators for selected observations.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $m$
+\end_inset
+
+ be the number of 
+\begin_inset Formula $u$
+\end_inset
+
+'s (subsample size).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MCMC with a unbiased likelihood estimator
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But is it OK to use a noisy estimate 
+\begin_inset Formula $\hat{p}(\mathbf{y}\vert\theta,\mathbf{u})$
+\end_inset
+
+ of the likelihood in MH?
+\end_layout
+
+\begin_layout Itemize
+The joint density 
+\begin_inset Formula 
+\[
+\tilde{p}(\theta,\mathbf{u}|\mathbf{y})=\frac{\hat{p}(\mathbf{y}|\theta,\mathbf{u})p(\theta)p(\mathbf{u})}{p(\mathbf{y})}
+\]
+
+\end_inset
+
+has the correct marginal density 
+\begin_inset Formula $p(\theta|\mathbf{y})$
+\end_inset
+
+ if 
+\begin_inset Formula $\hat{p}(\mathbf{y}|\theta,\mathbf{u})$
+\end_inset
+
+ is 
+\series bold
+\color blue
+unbiased
+\series default
+\color inherit
+ 
+\begin_inset Formula 
+\[
+p(\mathbf{y}\vert\theta)=\int\hat{p}(\mathbf{y}|\theta,\mathbf{u})p(\mathbf{u})d\mathbf{u}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is easily seen from
+\begin_inset Formula 
+\[
+\int\tilde{p}(\theta,\mathbf{u}|\mathbf{y})d\mathbf{u}=\frac{p(\theta)}{p(y)}\int\hat{p}(\mathbf{y}|\theta,\mathbf{u})p(\mathbf{u})d\mathbf{u}=\frac{p(\theta)p(\mathbf{y}\vert\theta)}{p(\mathbf{y})}=p(\theta\vert\mathbf{y})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Pseudo-Marginal MH (PMMH) algorithm
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "95col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Itemize
+Initialize 
+\begin_inset Formula $\left(\theta^{(0)},u^{(0)}\right)$
+\end_inset
+
+ and iterate for 
+\begin_inset Formula $i=1,2,...$
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Sample 
+\begin_inset Formula $\theta_{p}\sim q\left(\cdot\vert\theta^{(i-1)}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{p}\sim p_{\theta}(u)$
+\end_inset
+
+ to obtain 
+\begin_inset Formula $\hat{p}(y\vert\theta_{p},u)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Compute the 
+\series bold
+\color blue
+acceptance probability
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\alpha=\min\left(1,\frac{\textcolor{red}{\ensuremath{\hat{p}}}\left(\mathbf{y}\vert\theta_{p},u_{p}\right)p(\theta_{p})}{\textcolor{red}{\ensuremath{\hat{p}}}\left(\mathbf{y}\vert\theta^{(i-1)},u^{(i-1)}\right)p(\theta^{(i-1)})}\frac{q\left(\theta^{(i-1)}\vert\theta_{p}\right)}{q\left(\theta_{p}\vert\theta^{(i-1)}\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+With probability 
+\begin_inset Formula $\mbox{\alpha}$
+\end_inset
+
+ set 
+\begin_inset Formula $\left(\theta^{(i)},u^{(i)}\right)=\left(\theta_{p},u_{p}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\theta^{(i)},u^{(i)}\right)=\left(\theta^{(i-1)},u^{(i-1)}\right)$
+\end_inset
+
+ otherwise.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This MH has 
+\begin_inset Formula $\tilde{p}(\theta,\mathbf{u}|\mathbf{y})$
+\end_inset
+
+ as stationary distribution with marginal 
+\begin_inset Formula $p(\theta\vert\mathbf{y})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+This result holds 
+\series bold
+\color blue
+irrespective of the variance
+\series default
+\color inherit
+ of 
+\begin_inset Formula $\hat{p}(\mbox{\textbf{y}}|\theta,\mathbf{u})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+I
+\series bold
+t's OK to replace the likelihood with an unbiased estimate! 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "andrieu2009pseudo"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Optimal 
+\begin_inset Formula $m$
+\end_inset
+
+ - keep the variance around 
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Large 
+\begin_inset Formula $m$
+\end_inset
+
+ 
+\series default
+\color inherit
+
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\series bold
+costly
+\series default
+ 
+\begin_inset Formula $\hat{p}(\mathbf{y}|\theta,\mathbf{u})$
+\end_inset
+
+, but 
+\series bold
+efficient MCMC
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Small 
+\begin_inset Formula $m$
+\end_inset
+
+ 
+\series default
+\color inherit
+
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\series bold
+inexpensive
+\series default
+ 
+\begin_inset Formula $\hat{p}(\mathbf{y}|\theta,\mathbf{u})$
+\end_inset
+
+, but 
+\series bold
+inefficient MCMC
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Define the estimation error 
+\begin_inset Formula 
+\[
+z=\ln\hat{p}(\mathbf{y}\vert\theta,\mathbf{u})-\ln p(\mathbf{y}\vert\theta)
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $\sigma_{z}^{2}=Var(z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Assumptions: 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ is Gaussian
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Optimal 
+\begin_inset Formula $m$
+\end_inset
+
+
+\series default
+\color inherit
+ to maximize effective sample size per computational unit: target 
+\begin_inset Formula $\sigma_{z}^{2}\in[1,3.3]$
+\end_inset
+
+, depending on how good the proposal for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pitt2012some,doucet2012efficient"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating the likelihood by subsampling
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Log-likelihood
+\series default
+\color inherit
+ for independent observations:
+\begin_inset Formula 
+\[
+\ell(\theta)=\ln p(y_{1},...,y_{n}|\theta)=\sum_{i=1}^{n}\ln p(y_{i}\vert\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Log-likelihood
+\series default
+ 
+\series bold
+contribution
+\series default
+\color inherit
+ of 
+\begin_inset Formula $i$
+\end_inset
+
+th observation: 
+\begin_inset Formula 
+\[
+\ell_{i}(\theta)=\ln p(y_{i}\vert\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Applicable as long as we have 
+\series bold
+\color blue
+independent pieces of data
+\series default
+\color inherit
+:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Longitudinal data
+\series default
+.
+ Subjects are independent, the observations for a given subject are not.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Time series
+\series default
+ with 
+\begin_inset Formula $k$
+\end_inset
+
+th order Markov structure: 
+\begin_inset Formula $y_{t}\vert y_{t-1},...,y_{t-k}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Textual data
+\series default
+.
+ Documents are independent.
+ Words within documents are not.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Estimating the log-likelihood (a sum) is like estimating a population total.
+ 
+\series bold
+\color blue
+Survey sampling
+\series default
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simple random sampling does not work
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Simple random sampling
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+SRS
+\series default
+\color inherit
+) with replacement.
+ At the 
+\begin_inset Formula $j$
+\end_inset
+
+th draw: 
+\begin_inset Formula 
+\[
+\mathrm{Pr}(u_{j}=k)=\frac{1}{n},\text{ }k=1,...,n\text{ and }j=1,...,m
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\mathbf{u}=(u_{1},...,u_{m})$
+\end_inset
+
+ record the sampled observations.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Unbiased estimator
+\series default
+\color inherit
+ of the 
+\series bold
+\color blue
+log-likelihood
+\color inherit
+ 
+\series default
+(more on this later)
+\begin_inset Formula 
+\[
+\hat{\ell}_{SRS}(\theta)=\frac{n}{m}\sum_{j=1}^{m}\ell_{u_{j}}(\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{\ell}_{SRS}(\theta)$
+\end_inset
+
+ is 
+\series bold
+extremely variable
+\series default
+, even when 
+\begin_inset Formula $m/n$
+\end_inset
+
+ is large.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+PMCMC stuck
+\series default
+\color inherit
+ when 
+\begin_inset Formula $\hat{\ell}_{SRS}(\theta)$
+\end_inset
+
+ is sampled in the extreme right tail.
+\end_layout
+
+\begin_layout Itemize
+Sampling without replacement does not help.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subsampling MCMC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Quiroz and co-authors 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "quiroz2014speeding,quiroz2016exact,quiroz2017DA,dang2017hamiltonian"
+
+\end_inset
+
+ develop much improved subsampling MCMC based on pseudo-marginal methods.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Innovations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Control variates
+\series default
+\color inherit
+ to reduce the variance
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Depedent subsamples
+\series default
+\color inherit
+ over iterations.
+ Allows much noisier estimators.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Hamiltonian proposals
+\series default
+\color inherit
+ for high-dimensional problems
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+More on this in my keynote talk ...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Firefly Monte Carlo algorithm 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "maclaurin2014firefly"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Augmenting 
+\series default
+the data points with subset selection indicators.
+\end_layout
+
+\begin_layout Itemize
+Assume a 
+\series bold
+\color blue
+lower bound
+\series default
+\color inherit
+ 
+\begin_inset Formula $b_{k}(\theta)\leq L_{k}(\theta)$
+\end_inset
+
+ for likelihood contributions.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Augment
+\series default
+ each 
+\begin_inset Formula $y_{k}$
+\end_inset
+
+ with a 
+\series bold
+binary indicator
+\series default
+ 
+\begin_inset Formula $u_{k}$
+\end_inset
+
+ with distribution
+\begin_inset Formula 
+\[
+p(u_{k}\vert y_{k},\theta)=\left(\frac{L_{k}(\theta)-b_{k}(\theta)}{L_{k}(\theta)}\right)^{u_{k}}\left(\frac{b_{k}(\theta)}{L_{k}(\theta)}\right)^{1-u_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Marginalizing out the 
+\begin_inset Formula $u_{k}$
+\end_inset
+
+ returns the posterior 
+\begin_inset Formula $p(\theta\vert\mathbf{y})$
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "maclaurin2014firefly"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The likelihood contributions 
+\begin_inset Formula $L_{k}(\theta)$
+\end_inset
+
+ only appears in terms where 
+\begin_inset Formula $u_{k}=1$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+L_{k}(\theta)p(u_{k}\vert y_{k},\theta)=\begin{cases}
+L_{k}(\theta)-b_{k}(\theta) & \text{ if }u_{k}=1\\
+b_{k}(\theta) & \text{ if }u_{k}=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gibbs sampling:
+\series default
+ sample 
+\begin_inset Formula $u_{k}$
+\end_inset
+
+ from its full conditional.
+ If 
+\series bold
+the bound is tight
+\series default
+ most 
+\begin_inset Formula $u_{k}$
+\end_inset
+
+ will be zero, i.e.
+ small subsample.
+\end_layout
+
+\begin_layout Itemize
+Posterior on augmented space (
+\begin_inset Formula $\prod_{k=1}^{n}b_{k}(\theta)$
+\end_inset
+
+ often in 
+\begin_inset Formula $O(1)$
+\end_inset
+
+ time)
+\begin_inset Formula 
+\[
+p(\theta,\mathbf{u}\vert\mathbf{y})=p(\theta)\prod_{k=1}^{n}b_{k}(\theta)\prod_{k:u_{k}=1}\left(\frac{L_{k}(\theta)-b_{k}(\theta)}{L_{k}(\theta)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical tests with a certain confidence
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The following methods are of this nature 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Austerity Metropolis-Hastings (Korattikaria et al., 2014) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "korattikara2013austerity"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Confidence sampler (Bardenet et al., 2014) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bardenet2014towards"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Confidence sampler with proxies (Bardenet et al., 2015) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bardenet2015markov"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Key idea
+\series default
+: The acceptance decision in
+\series bold
+ Metropolis-Hastings
+\series default
+ 
+\begin_inset Formula 
+\[
+u\leq\alpha(\theta,\theta^{\prime})=\exp\left[\ell(\theta')-\ell(\theta)\right]\text{ (symmetric proposal and flat prior)}
+\]
+
+\end_inset
+
+can be written 
+\begin_inset Formula 
+\begin{eqnarray*}
+\log(u) & \leq & \ell(\theta')-\ell(\theta)=n\left[\bar{\ell}(\theta^{\prime})-\bar{\ell}(\theta)\right],\quad\left[\bar{\ell}(\theta)=l(\theta)/n\right].
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\varLambda_{n}(\theta,\theta^{\prime})=\bar{\ell}(\theta')-\bar{\ell}(\theta)$
+\end_inset
+
+.
+ We see that M-H 
+\series bold
+accepts a move if
+\series default
+ 
+\begin_inset Formula 
+\[
+\varLambda_{n}(\theta,\theta^{\prime})\geq\frac{1}{n}\log(u)=\psi_{0}(\theta^{\prime},\theta)
+\]
+
+\end_inset
+
+and 
+\series bold
+rejects if the opposite
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Base the acceptance decision
+\series default
+ on a subset of data of size 
+\begin_inset Formula $m$
+\end_inset
+
+, i.e.
+ use 
+\begin_inset Formula $\varLambda_{m}^{*}(\theta,\theta^{\prime})$
+\end_inset
+
+ to determine if 
+\begin_inset Formula $\varLambda_{n}(\theta,\theta^{\prime})>\psi_{0}(\theta,\theta^{\prime})$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical tests with a certain confidence
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Korattikaria et al.
+ (2014)
+\series default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "korattikara2013austerity"
+
+\end_inset
+
+: Statistical test: 
+\begin_inset Formula 
+\begin{eqnarray*}
+H_{0} & : & \varLambda_{n}(\theta,\theta^{\prime})=\psi_{0}(\theta,\theta^{\prime})\\
+H_{1} & : & \varLambda_{n}(\theta,\theta^{\prime})\neq\psi_{0}(\theta,\theta^{\prime})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Normalized test statistic
+\series default
+ is asymptotically Student-t by CLT.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Algorithm
+\series default
+: Start with a 
+\series bold
+small fraction of data
+\series default
+.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Can the decision of 
+\series bold
+rejecting
+\series default
+ 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ be taken with a specified error probability? 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+If Yes
+\series default
+: accept the sample (if 
+\begin_inset Formula $\varLambda_{m}^{*}(\theta,\theta^{\prime})>\psi_{0}$
+\end_inset
+
+) and reject if the opposite 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+If No
+\series default
+: sample more data and ask 
+\series bold
+1.
+
+\series default
+ again.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Drawbacks:
+\series default
+ Relies on many CLTs.
+ Approx may be poor when CLT is violated 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bardenet2015markov"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical tests with a certain confidence
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bardenet et.
+ al.
+ (2014) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bardenet2014towards"
+
+\end_inset
+
+: Use 
+\series bold
+concentration bounds
+\series default
+ (no CLT):
+\begin_inset Formula 
+\[
+\Pr(|\varLambda_{m}^{*}(\theta,\theta^{\prime})-\varLambda_{n}(\theta,\theta^{\prime})|\leq c_{m})\geq1-\delta,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $c_{m}$
+\end_inset
+
+ is the 
+\series bold
+concentration bound
+\series default
+ and 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is the user specified error probability.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Keep sampling
+\series default
+ data until we know that the event 
+\begin_inset Formula 
+\[
+\left\{ |\varLambda_{m}^{*}(\theta,\theta^{\prime})-\varLambda_{n}(\theta,\theta^{\prime})|\leq c_{m}\right\} 
+\]
+
+\end_inset
+
+is 
+\series bold
+true
+\series default
+ (with a certain "confidence").
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Accept
+\series default
+ the sample if 
+\begin_inset Formula $\varLambda_{n}^{*}(\theta,\theta^{\prime})>\psi_{0}$
+\end_inset
+
+, otherwise reject.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Important:
+\series default
+ 
+\begin_inset Formula $c_{m}$
+\end_inset
+
+ is a function of 
+\series bold
+the variance
+\series default
+ and 
+\series bold
+the range
+\series default
+ of the "population" 
+\begin_inset Formula 
+\[
+\ell_{k}(\theta^{\prime})-\ell_{k}(\theta).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Drawback: the range is typically 
+\begin_inset Formula $O(n)$
+\end_inset
+
+
+\series default
+ in non-trivial models (Bardenet et.
+ al., 2015) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bardenet2015markov"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical tests with a certain confidence
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Bardenet et.
+ al.
+ (2015) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bardenet2015markov"
+
+\end_inset
+
+
+\series default
+ improves on this idea by introducing proxies 
+\begin_inset Formula $w_{k}(\theta,\theta^{\prime})\approx\ell_{k}(\theta^{\prime})-\ell_{k}(\theta)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Control-variates
+\series default
+ to reduce the variance.
+ 
+\end_layout
+
+\begin_layout Itemize
+The proxies are obtained by a 
+\series bold
+second order Taylor approximation
+\series default
+ w.r.t the parameter.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Same procedure
+\series default
+ as in Bardenet et.
+ al.
+ (2014), but now on 
+\begin_inset Formula 
+\[
+\ell_{k}(\theta^{\prime})-\ell_{k}(\theta)-w_{k}(\theta,\theta^{\prime})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+The range
+\series default
+ in the concentration bound is replaced by an estimate of 
+\series bold
+the remainder
+\series default
+ of the Taylor series via the 
+\series bold
+Taylor-Lagrange inequality
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Major drawback:
+\series default
+ 
+\series bold
+Very difficult
+\series default
+ to obtain a (tight) bound on the third order derivatives, even for reasonably
+ 
+\series bold
+simplistic models.
+
+\series default
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+AR process example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+AR(1) process with student-
+\begin_inset Formula $t$
+\end_inset
+
+ noise
+\series default
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{t} & = & \beta_{0}+\beta_{1}y_{t-1}+\epsilon_{t},\quad\epsilon_{t}\sim t(\nu)\text{ iid}
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Aim:
+\series default
+ posterior of 
+\begin_inset Formula $\beta_{0},\beta_{1}$
+\end_inset
+
+ with known 
+\begin_inset Formula $\nu=5$
+\end_inset
+
+ based on a sample with 100,000 observations.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Posterior is more or less a spike.
+ Confidence sampler should preform well.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subsample fraction - AR
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="11">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Uncorr}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Corr}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Conf}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{ConfProxy}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{AustMH}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Firefly}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.055
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.023
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.493
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.161
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.197
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/RED_ARplainFeb1.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+AR process example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ARplainKDEparam1Plot1.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ARplainKDEparam2Plot1.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ARplainKDEparam1Plot2.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ARplainKDEparam2Plot2.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Steady state AR process example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+AR(1) process with student-
+\begin_inset Formula $t$
+\end_inset
+
+ noise
+\series default
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{t} & = & \mu+\rho(y_{t-1}-\mu)+\epsilon_{t},\quad\epsilon_{t}\sim t(\nu)\text{ iid}
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Aim:
+\series default
+ posterior of 
+\begin_inset Formula $\mu,\rho$
+\end_inset
+
+ with known 
+\begin_inset Formula $\nu=5$
+\end_inset
+
+ based on a sample with 100,000 observations.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho$
+\end_inset
+
+ is close to one in the data, so posterior of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ concentrates very slowly.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subsample fraction - Steady State AR
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="11">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Uncorr}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Corr}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Conf}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{ConfProxy}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{AustMH}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset Formula $\mathrm{Firefly}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.159
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.059
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.489
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.497
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.189
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+0.134
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/RED_ARsteadyFeb1.png
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Steady State AR
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ARsteadyKDEparam1Plot1.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ARsteadyKDEparam2Plot1.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ARsteadyKDEparam1Plot2.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ARsteadyKDEparam2Plot2.png
+	lyxscale 20
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "ref"
+options "bibtotoc,ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

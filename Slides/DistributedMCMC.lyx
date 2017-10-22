@@ -1,0 +1,2025 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+
+\usepackage[ruled]{algorithm2e}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ML for Econometrics
+\end_layout
+
+\end_inset
+
+ML for Econometricians
+\begin_inset Newline newline
+\end_inset
+
+Distributed MCMC
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename ../../ProbStatUProg/Lectures/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+Lecture Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Parallelism - potential and limitations
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Distributed MCMC
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\series bold
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parallelism - potential
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Why
+\series default
+\color inherit
+? Cores don't get much faster, but we get more of them.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+MCMC is serial
+\series default
+\color inherit
+ - hard to parallelize.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Independence MH
+\series default
+ can be parallelized by:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In parallel: generate 
+\series bold
+all
+\series default
+ proposal draws and evaluate posterior densities.
+\end_layout
+
+\begin_layout Enumerate
+Run Markov Chain on single core using pre-computed quantities from 1.
+\end_layout
+
+\begin_layout Enumerate
+Inject a random walk step every 
+\begin_inset Formula $r$
+\end_inset
+
+:th step to avoid getting stuck.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Graphic cards (
+\series bold
+\color blue
+GPU
+\series default
+\color inherit
+) have thousands of cores.
+\begin_inset Newline newline
+\end_inset
+
+Hours 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Seconds in favorable cases.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lee2010utility,suchard2010understanding,eklund2015broccoli"
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Conditional independence
+\series default
+\color inherit
+ can open up parallelism.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "magnusson2015parallelizing"
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Special solutions: 
+\series bold
+\color blue
+Pre-fetching
+\series default
+\color inherit
+.
+ Predict the future state of the MCMC chain and pre-compute ahead of time.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "strid2010efficient,banterle2014accelerating"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\series bold
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parallelism - limitations
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Need special code.
+ 
+\series bold
+Harder to debug
+\series default
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Graphic cards (
+\series bold
+GPU
+\series default
+) requires very careful data management to be really effective.
+ RAM/Shared/Constant/Registers.
+ See the MCMC in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "eklund2015broccoli"
+
+\end_inset
+
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Avoiding marginalization
+\series default
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Conditional independences 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Parallelism, but can slow down convergence.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Amdahl's law
+\series default
+\color inherit
+.
+ 'The theoretical speedup is always limited by the part of the task that
+ cannot benefit from the improvement'.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Communication
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+overhead
+\series default
+\color inherit
+ limits gains from parallelism.
+ Asynchronous MCMC may help.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "terenin2015asynchronous"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The data set may be 
+\series bold
+\color blue
+larger than RAM
+\series default
+\color inherit
+ memory.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\series bold
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Distributed MCMC
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Map-Reduce
+\series default
+\color inherit
+ philosophy: bring the computations to the data.
+\end_layout
+
+\begin_layout Itemize
+General idea:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Split
+\series default
+ the data across many machines.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Run
+\series default
+ 
+\series bold
+separate
+\series default
+ MCMC chains on each machine.
+ 
+\series bold
+\color blue
+Subposteriors
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Combine
+\series default
+ the MCMC 
+\series bold
+draws
+\series default
+ after the MCMC.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Posterior and subposteriors from 
+\begin_inset Formula $S$
+\end_inset
+
+ machines/data subsets 
+\begin_inset Formula 
+\[
+p\left(\theta\vert\mathbf{y}\right)\propto\prod_{s=1}^{S}p(\mathbf{y}_{s}\vert\theta)p(\theta)^{1/S}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+subsets
+\series default
+ 
+\begin_inset Formula $\mathbf{y}_{1},...,\mathbf{y}_{S}$
+\end_inset
+
+ are assumed 
+\series bold
+conditionally independent
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(\theta)=\prod_{s=1}^{S}p(\theta)^{1/S}$
+\end_inset
+
+ to preserve total prior information.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Make sure that 
+\begin_inset Formula $p(\theta)^{1/S}$
+\end_inset
+
+ is proper!
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+How to combine draws
+\series default
+\color inherit
+ from different subposteriors?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\series bold
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Consensus Monte Carlo
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Assume
+\series default
+ that each subposterior 
+\begin_inset Formula $p(\theta\vert\mathbf{y}_{s})$
+\end_inset
+
+ is 
+\begin_inset Formula $N(\mu_{s},\Omega_{s})$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+p\left(\theta\vert\mathbf{y}\right)\propto\prod_{s=1}^{S}p(\theta\vert\mathbf{y}_{s})=N(\mu,\Omega)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+\Omega^{-1}=\sum_{s=1}^{S}\Omega_{s}^{-1}\qquad\mu=\Omega\left(\sum_{s=1}^{S}\Omega_{s}^{-1}\mu_{s}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Scott et al.
+ (2013) 
+\series bold
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scott2013bayes"
+
+\end_inset
+
+
+\series default
+ therefore propose to take (matrix) 
+\series bold
+weighted averages of the subposterior draws
+\series default
+: 
+\series bold
+
+\begin_inset Formula 
+\[
+\theta^{(i)}=\left(\sum_{s=1}^{S}\Omega_{s}^{-1}\right)^{-1}\sum_{s=1}^{S}\Omega_{s}^{-1}\theta_{s}^{(i)},\;i=1,...,N
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Check: 
+\begin_inset Formula $\mathbb{E}(\theta^{(i)})=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{C}(\theta^{(i)})=\Omega$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\series bold
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Consensus Monte Carlo, cont.
+\end_layout
+
+\end_inset
+
+
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The averaging of draws 
+\series bold
+
+\begin_inset Formula 
+\[
+\theta^{(i)}=\left(\sum_{s=1}^{S}\Omega_{s}^{-1}\right)^{-1}\sum_{s=1}^{S}\Omega_{s}^{-1}\theta_{s}^{(i)}
+\]
+
+\end_inset
+
+
+\series default
+is 
+\series bold
+only formally correct when
+\series default
+ each subposterior is normal.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Posteriors are asymptotically normal (Bernstein-von Mises), but note that
+ it need to hold for each subposterior.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Omega_{s}$
+\end_inset
+
+ can be estimated by the sample covariance of 
+\begin_inset Formula $\theta_{s}^{(1)},...,\theta_{s}^{(N)}$
+\end_inset
+
+.
+ Simplification: assume 
+\begin_inset Formula $\Omega_{s}$
+\end_inset
+
+ to be diagonal.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Logistic regression 100 obs per machine
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/ConsensusLogistic100PerWorker.pdf
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Scott et al.
+ (2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scott2013bayes"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Logistic regression 1000 obs per machine
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/ConsensusLogistic1000PerWorker.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Scott et al.
+ (2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scott2013bayes"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Logistic regression 10000 obs per machine
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/ConsensusLogistic10000PerWorker.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Scott et al.
+ (2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scott2013bayes"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Kernel-based approaches and cousins
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neiswanger et al.
+ (2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "neiswanger2013asymptotically"
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Nonparametric
+\series default
+\color inherit
+.
+ Estimates each subposterior by a kernel density estimator.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Semiparametric
+\series default
+\color inherit
+.
+ Estimates each subposterior by the semiparametric density estimator in
+ Hjort and Glad (1995) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hjort1995nonparametric"
+
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Yin Yang sampler
+\series default
+\color inherit
+ (Posekany and Fruhwirth-Schnatter, in progress).
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Weierstrass sampler
+\series default
+\color inherit
+ (Wang and Dunson, 2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wang2013parallel"
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hard to estimate KDEs in moderate to high dimensions.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Consensus MC vs Nonparametric
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/EmbarrasinglyParallelEllipsoid.pdf
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Neiswanger et al.
+ (2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "neiswanger2013asymptotically"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Median subposterior (Minsker et al)
+\series default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "minsker2014scalable"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Algorithm
+\series default
+: 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Run 
+\color blue
+MCMC on scaled subposteriors
+\series default
+\color inherit
+ (each of the data observations are replicated 
+\begin_inset Formula $S$
+\end_inset
+
+ times to mimic the posterior spread).
+\end_layout
+
+\begin_layout Itemize
+Return the 
+\series bold
+\color blue
+median
+\series default
+ 
+\series bold
+subposterior
+\series default
+\color inherit
+ of the 
+\begin_inset Formula $S$
+\end_inset
+
+ subposteriors.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: the 
+\series bold
+median is over a space of probability distribution
+\series default
+ using some suitable metric.
+ Uniform distribution over atoms 
+\begin_inset Formula $\mathbf{x}_{1},...,\mathbf{x}_{m}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathbf{x}_{median}\equiv\mathrm{argmin}_{\mathbf{x}\in\mathcal{X}}\sum_{i=1}^{m}\left\Vert \mathbf{x}-\mathbf{x}_{j}\right\Vert 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The median is computed by an efficient algorithm.
+ End result: weights on the subposteriors (draws).
+\end_layout
+
+\begin_layout Itemize
+The median subposterior has two 
+\series bold
+advantages
+\series default
+:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+it is a better approximation of the full posterior than the individual subposter
+iors.
+ 
+\end_layout
+
+\begin_layout Itemize
+it is more 
+\series bold
+\color blue
+resistant to outliers
+\series default
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Combining subposteriors using GPs
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Main idea in Nemeth and Sherlock (2016) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nemeth2016merging"
+
+\end_inset
+
+: 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+use the subposterior MCMC draws 
+\series bold
+and
+\series default
+ the evaluated log-subposterior densities to 
+\series bold
+\color blue
+fit a GP to each log-subposterior
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Approximate the full log-posterior by 
+\series bold
+\color blue
+summing the log-subposterior GPs
+\series default
+\color inherit
+ (sum of GPs is a GP, just like a sum of Gaussians is Gaussian).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Posterior distribution of the log posterior density function
+\series default
+ (a GP is a distribution over functions), including uncertainty.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Prior mean: the subposterior is Gaussian
+\series default
+.
+ Covariance of Gaussian is obtained from MCMC.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/SumOfGPs.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Combining subposteriors using GPs
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Algorithm:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Run MCMC on each subposterior
+\series default
+\color inherit
+.
+ Save draws 
+\series bold
+
+\begin_inset Formula $\theta_{s}^{(i)}$
+\end_inset
+
+ and
+\series default
+ 
+\begin_inset Formula $\log p(\theta_{s}^{(i)}\vert\mathbf{y}_{s})$
+\end_inset
+
+ evaluations, for 
+\begin_inset Formula $i=1,...,I$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\mathcal{D}_{s}=\left\{ \theta_{s}^{(1:I)},\log p(\theta_{s}^{(1:I)}\vert\mathbf{y}_{s})\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Fit a noise-free GP regression
+\series default
+\color inherit
+ to 
+\begin_inset Formula $\mathcal{D}_{s}$
+\end_inset
+
+ with response 
+\begin_inset Formula $\log p(\theta_{s}^{(1:I)}\vert\mathbf{y}_{s})$
+\end_inset
+
+.
+ Predictive distribution for the log subposterior at a new set of parameter
+ values 
+\begin_inset Formula $\theta^{(1:J)}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\log p_{s}(\theta^{(1:J)})\vert\mathcal{D}_{s}\sim GP\left(\mu_{s}(\theta^{(1:J)}),\Sigma_{s}(\theta^{(1:J)})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Sum subposterior GPs
+\series default
+\color inherit
+ to approximate the full data 
+\begin_inset Formula $\log p(\theta\vert\mathbf{y})$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\log p(\theta^{(1:J)}\vert\mathbf{y})\vert\mathcal{D}\sim GP\left(\sum_{s=1}^{S}\mu_{s}(\theta^{(1:J)}),\sum_{s=1}^{S}\Sigma_{s}(\theta^{(1:J)})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+GP-HMC sampler
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Posterior mean
+\series default
+ of 
+\begin_inset Formula $p(\theta\vert\mathbf{y})\vert\mathcal{D}$
+\end_inset
+
+ (using properties of log normal)
+\begin_inset Formula 
+\[
+\hat{p}_{E}(\theta\vert\mathbf{y})\equiv\mathbb{E}\left(p(\theta\vert\mathbf{y})\vert\mathcal{D}\right)=\exp\left(\sum_{s=1}^{S}\mu_{s}(\theta)+\frac{1}{2}\sum_{s=1}^{S}\Sigma_{s}(\theta)\right)
+\]
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sample 
+\begin_inset Formula $\hat{p}_{E}(\theta\vert\mathbf{y})$
+\end_inset
+
+
+\series default
+ using 
+\series bold
+\color blue
+Hamiltonian Monte Carlo
+\color inherit
+ 
+\series default
+(
+\series bold
+\color blue
+HMC
+\series default
+\color inherit
+) on a single machine.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{p}_{E}(\theta\vert\mathbf{y})$
+\end_inset
+
+ does not depend on the original data.
+ No need to transfer data from the subposterior machines.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{p}_{E}(\theta\vert\mathbf{y})$
+\end_inset
+
+ relatively cheap to evaluate.
+ 
+\end_layout
+
+\begin_layout Itemize
+The costly leap-frog steps in HMC are cheap since gradients of 
+\begin_inset Formula $\log\hat{p}_{E}(\theta\vert\mathbf{y})$
+\end_inset
+
+ are available in convenient closed form.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Distributed Importance Sampling
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nemeth and Sherlock (2016) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nemeth2016merging"
+
+\end_inset
+
+: 
+\series bold
+\color blue
+distributed importance sampler
+\series default
+\color inherit
+ to 
+\series bold
+correct
+\series default
+ 
+\series bold
+any
+\series default
+ combination approach.
+\end_layout
+
+\begin_layout Itemize
+Algorithm:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+On central machine: propose 
+\begin_inset Formula $\theta^{(1:N)}$
+\end_inset
+
+ from joint proposal distribution 
+\begin_inset Formula $q(\theta^{(1:N)})$
+\end_inset
+
+ with identical marginals 
+\begin_inset Formula $q_{1}(\theta^{(i)})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Transfer 
+\begin_inset Formula $\theta^{(1:N)}$
+\end_inset
+
+ to all submachines.
+\end_layout
+
+\begin_layout Itemize
+Evaluate 
+\begin_inset Formula $p(\theta^{(1:N)}\vert\mathbf{y}_{s})$
+\end_inset
+
+ on each submachine and return to central machine.
+\end_layout
+
+\begin_layout Itemize
+Compute weights on each draw 
+\begin_inset Formula $w_{i}=\prod_{s=1}^{S}p(\theta^{(i)}\vert\mathbf{y}_{s})/q_{1}(\theta^{(i)})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Output a weighted posterior sample 
+\begin_inset Formula $\left\{ \theta^{(i)},w_{i}\right\} _{i=1}^{N}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unweighted posterior sample by iid sampling from 
+\begin_inset Formula $\left\{ \theta^{(i)},w_{i}\right\} _{i=1}^{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q(\theta^{(1:N)})$
+\end_inset
+
+ is iid Gaussian in the consensus approach.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q(\theta^{(1:N)})$
+\end_inset
+
+ sampled by HMC in the GP-HMC sampler.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Mixture of Laplace example 
+\series default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nemeth2016merging"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Simulated data set from mixture of two Laplace distributions.
+ 
+\end_layout
+
+\begin_layout Itemize
+1M observations.
+ 1 parameter.
+ 
+\begin_inset Formula $S=20$
+\end_inset
+
+ machines.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/LaplaceCombinePosterior.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Nemeth and Sherlock (2016) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nemeth2016merging"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Mixture of Laplace example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/TableMergingGPsLaplaceMixture.pdf
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Nemeth and Sherlock (2016) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nemeth2016merging"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Logistic regression example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+HEPMASS data set.
+ 
+\end_layout
+
+\begin_layout Itemize
+1M observations.
+ 
+\end_layout
+
+\begin_layout Itemize
+27 parameters.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S=20$
+\end_inset
+
+ machines.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../Melbourne2016/Slides/Graphics/TableMergingGPsLogisticRegression.pdf
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Nemeth and Sherlock (2016) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nemeth2016merging"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../Melbourne2016/Slides/ref"
+options "bibtotoc,ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
