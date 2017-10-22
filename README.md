@@ -61,7 +61,8 @@ Software:
 
 Reading: 
 
-- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/Graphics/NothingToSee.jpg) - TBA
+- [Slides Distributed MCMC](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/DistributedMCMC.jpg)
+- [Slides Subsampling MCMC](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/SubsamplingMCMC.jpg)  
 
 ---
 
