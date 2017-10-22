@@ -61,8 +61,8 @@ Software:
 
 Reading: 
 
-- [Slides Distributed MCMC](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/DistributedMCMC.jpg)
-- [Slides Subsampling MCMC](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/SubsamplingMCMC.jpg)  
+- [Slides Distributed MCMC](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/DistributedMCMC.pdf)
+- [Slides Subsampling MCMC](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/SubsamplingMCMC.pdf)  
 
 ---
 
