@@ -113,7 +113,7 @@ Software:
 
 Reading: 
 
-- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/Graphics/NothingToSee.jpg) - TBA
+- [Slides](https://github.com/mattiasvillani/ESOBE2017/raw/master/Slides/DeepLearning.pdf)
 - Chapters 1,4,5 and 6 of [Deep Learning](http://www.deeplearningbook.org/) - the main book for deep learning.
 
 Software:

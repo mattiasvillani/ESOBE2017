@@ -1,0 +1,1464 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+
+\usepackage[ruled]{algorithm2e}
+\SetKwInput{KwInput}{Input}
+\SetKwInput{KwOutput}{Output}
+
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+ML for Econometrics
+\end_layout
+
+\end_inset
+
+ML for Econometricians
+\begin_inset Newline newline
+\end_inset
+
+Deep Learning
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Deep Learning - don't believe the hype?
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Deep Neural Networks
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Stochastic gradient descent
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Deep Learning in economic applications
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deep Learning
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Deep (multi-layered) 
+\series bold
+\color blue
+neural networks
+\series default
+\color inherit
+ estimated with 
+\series bold
+\color blue
+stochastic gradient descent
+\series default
+\color inherit
+ and 
+\series bold
+\color blue
+back-propagation
+\series default
+\color inherit
+ to compute the gradient.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+BIG HYPE!
+\series default
+\color inherit
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reshaping the Machine Learning field.
+ 
+\end_layout
+
+\begin_layout Itemize
+ML conferences are booming.
+ 
+\end_layout
+
+\begin_layout Itemize
+Huge industry interest.
+ 
+\end_layout
+
+\begin_layout Itemize
+A lot of human capital allocated to Deep Learning.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Very successful for 
+\series bold
+\color blue
+images
+\series default
+\color inherit
+ and 
+\series bold
+\color blue
+computer vision
+\series default
+\color inherit
+.
+ 
+\series bold
+\color blue
+Big boost in predictive performance
+\series default
+\color inherit
+ over previous methods.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Automatic feature construction
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+The jury is still out for other types of data, for example text, or more
+ structured statistical data.
+\end_layout
+
+\begin_layout Itemize
+Why this comeback for neural networks?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Massive 
+\series bold
+\color blue
+cloud-sized datasets
+\series default
+\color inherit
+.
+ DNN need a lot of data to work well.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+GPU computing
+\series default
+\color inherit
+ makes it possible to go deep (many layers)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Improved optimization
+\series default
+\color inherit
+ methods (kind of)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Better
+\series default
+\color inherit
+ understanding of 
+\series bold
+\color blue
+network choices
+\series default
+\color inherit
+ (activation functions etc)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Invariances
+\series default
+\color inherit
+ built in (e.g.
+ convolutions for images)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ImageNet competitions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "goodfellow2016deep"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ImageNetErrors.pdf
+	scale 75
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DNN and visual cortex layers 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "goodfellow2016deep"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DNNPictureWoman.pdf
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feedforward Networks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Flow from inputs 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ outputs 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+ 
+\series bold
+\color blue
+without feedback loops
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+Feedforward network with 
+\begin_inset Formula $L$
+\end_inset
+
+ 
+\series bold
+\color blue
+hidden layers
+\series default
+\color inherit
+:
+\begin_inset Formula 
+\begin{align*}
+\mathbf{h}^{(1)} & =g^{(1)}\left(\mathbf{W}^{(1)}\mathbf{x}+\mathbf{b}^{(1)}\right)\\
+\mathbf{h}^{(2)} & =g^{(2)}\left(\mathbf{W}^{(2)}\mathbf{h}^{(1)}+\mathbf{b}^{(2)}\right)\\
+ & \vdots\\
+\mathbf{h}^{(L)} & =g^{(L)}\left(\mathbf{W}^{(L)}\mathbf{h}^{(L-1)}+\mathbf{b}^{(L)}\right)\\
+\mathbf{y} & \vert\mathbf{x}\sim p\left(\mathbf{y}\vert q(\mathbf{W}^{(L+1)}\mathbf{h}^{(L)}+\mathbf{b}^{(L+1)})\right)
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $g^{(l)}$
+\end_inset
+
+ is the activation function at layer 
+\begin_inset Formula $l$
+\end_inset
+
+, e.g.
+ the logistic and 
+\begin_inset Formula $q(\cdot)$
+\end_inset
+
+ is the activation for the output layer, often linear.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Network depth 
+\series default
+\color inherit
+- the number of layers
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Network width
+\series default
+\color inherit
+ - number of neurons per layer
+\end_layout
+
+\begin_layout Itemize
+(nonlinear) 
+\series bold
+\color blue
+activation functions
+\series default
+\color inherit
+ 
+\begin_inset Formula $g(\cdot)$
+\end_inset
+
+ that connect layers.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DNN for binary classification with 20 inputs
+\begin_inset Newline newline
+\end_inset
+
+3 layers each with 10 neurons
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DNNmatlab.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Activation functions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ActivationFunctions.pdf
+	scale 35
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient descent for Deep Neural Networks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(scaled) Negative log-likelihood as 
+\series bold
+\color blue
+loss function
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+J(\theta)=-\frac{1}{n}\sum_{i=1}^{n}\log p(\mathbf{y}_{i}\vert\mathbf{x}_{i},\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Gradient
+\begin_inset Formula 
+\[
+g(\theta)=\nabla_{\theta}J(\theta)=-\frac{1}{n}\sum_{i=1}^{n}\nabla_{\theta}\log p(\mathbf{y}_{i}\vert\mathbf{x}_{i},\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Gradient descent to find the minimum.
+\begin_inset Formula 
+\[
+\theta^{(t)}=\theta^{(t-1)}-\epsilon g(\theta^{(t-1)})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Gradient in DNN efficiently computed by 
+\series bold
+\color blue
+back-propagation
+\series default
+\color inherit
+ (chain rule + smart computations).
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient descent for Deep Neural Networks
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gradient descent is still costly for large 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Stochastic Gradient Decent
+\series default
+\color inherit
+ (
+\series bold
+SGD
+\series default
+) uses an 
+\series bold
+\color blue
+unbiased estimator of the gradient
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+Unbiased estimator of the gradient from a mini-batch of 
+\begin_inset Formula $m$
+\end_inset
+
+ observations selected by 
+\begin_inset Formula $\mathbf{u}=(u_{1},...,u_{n})$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\hat{g}(\theta,\mathbf{u})=-\frac{1}{m}\sum_{j=1}^{m}\nabla_{\theta}\log p(\mathbf{y}_{j}\vert\mathbf{x}_{j},\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+SGD
+\begin_inset Formula 
+\[
+\theta^{(t)}=\theta^{(t-1)}-\epsilon_{t}\hat{g}(\theta^{(t-1)},\mathbf{u}^{(t-1)})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Will converge to local minima if 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "robbins1951stochastic"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\sum_{t=\text{1}}^{\infty}\epsilon_{t}=\infty$
+\end_inset
+
+ and 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\sum_{t=\text{1}}^{\infty}\epsilon_{t}^{2}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Satisfied by for example 
+\begin_inset Formula $\epsilon_{t}=t^{-\kappa}$
+\end_inset
+
+ for 
+\begin_inset Formula $\kappa\in(0.5,1]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stochastic Gradient Descent (SGD) algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm}[H]     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+SetAlgoLined 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwInput{data $
+\backslash
+textbf{y}$, likelihood function $p(
+\backslash
+mathbf{y} | 
+\backslash
+theta)$, prior density $p(
+\backslash
+theta)$, unbiased gradient estimator $
+\backslash
+hat g(
+\backslash
+theta, 
+\backslash
+mathbf{u})$, initial value $
+\backslash
+theta^{(0)}$, random number generator for the subsampling indicators $
+\backslash
+mathbf{u}$, subsample size $m$, step length sequence $
+\backslash
+{
+\backslash
+epsilon_t 
+\backslash
+}_{t 
+\backslash
+in 
+\backslash
+mathcal{T}}$, stopping criteria.}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+BlankLine 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+While{stopping criteria not met}{    
+\end_layout
+
+\begin_layout Plain Layout
+
+		generate minibatch $
+\backslash
+mathbf{u} 
+\backslash
+sim p(
+\backslash
+mathbf{u})$ 
+\backslash
+
+\backslash
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+		set $
+\backslash
+theta^{(t)} = 
+\backslash
+theta^{(t-1)} - 
+\backslash
+epsilon_t 
+\backslash
+hat g
+\backslash
+big(
+\backslash
+theta^{(t-1)}, 
+\backslash
+mathbf{u}^{(t-1)}
+\backslash
+big)$ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+BlankLine 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+KwOutput{terminal value $
+\backslash
+theta^{(t_{
+\backslash
+mathrm{end}})}$} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+BlankLine 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Stochastic Gradient Descent (SGD)}    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deep learning for firm bankruptcy prediction
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firm bankruptcy for Swedish firms.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $n=4.7$
+\end_inset
+
+ million observations
+\end_layout
+
+\begin_layout Itemize
+logistic regression using 
+\begin_inset Formula $8$
+\end_inset
+
+ covariates: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+financial ratios (profits/assets, liquidity/debt etc)
+\end_layout
+
+\begin_layout Itemize
+macro variables (interest rate and GDP).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+nonlinear: additive splines improve forecasting performance 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "giordani2011taking"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/EBITDATA.eps
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/TATL.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DL for firm bankruptcy - in-sample AUC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/BankRuptInSampleNN20.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DL for firm bankruptcy - in-sample AUC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/BankRuptInSampleNN100.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DL for firm bankruptcy - out-of-sample AUC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/BankRuptOutSampleNN20.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DL for firm bankruptcy - out-of-sample AUC
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/BankRuptOutSampleNN100.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+DL for firm bankruptcy - choice of activation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/activation_functions_study.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Matlab: 
+\series bold
+Neural Network Toolbox
+\series default
+ 
+\family typewriter
+(patternet
+\family default
+ function)
+\end_layout
+
+\begin_layout Itemize
+R: 
+\series bold
+mxnet
+\end_layout
+
+\begin_layout Itemize
+Python: 
+\series bold
+sklearn.neural_network
+\end_layout
+
+\begin_layout Itemize
+Google's 
+\series bold
+TensorFlow
+\series default
+ for serious use.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "ref"
+options "bibtotoc,ieeetr"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
