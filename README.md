@@ -121,9 +121,9 @@ Software:
 - [Google's TensorFlow](https://www.tensorflow.org/)
 
 Code for analyzing the [Bank Marketing Data](https://archive.ics.uci.edu/ml/datasets/bank+marketing) from the [UCI repository](https://archive.ics.uci.edu/ml/index.html):
-- [classification.R]()
-- [classification.py]I()
-- [classification.m]()
+- [classification.R](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.R)
+- [classification.py]I(https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.py) and as [python notebook](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.ipynb)
+- [classification.m](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.m)
 
 ---
 
