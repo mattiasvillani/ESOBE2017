@@ -121,7 +121,7 @@ Software:
 - [Google's TensorFlow](https://www.tensorflow.org/)
 
 Code for analyzing the [Bank Marketing Data](https://archive.ics.uci.edu/ml/datasets/bank+marketing) from the [UCI repository](https://archive.ics.uci.edu/ml/index.html):
-- [classification.R](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.R)
+- [classification.R](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.R) using the mxnet package. [R-bloggers about mxnet](https://www.r-bloggers.com/deep-learning-with-mxnetr/)
 - [classification.py](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.py) and as [python notebook](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.ipynb)
 - [classification.m](https://github.com/mattiasvillani/ESOBE2017/raw/master/Code/DeepNN/classification/classification.m)
 
