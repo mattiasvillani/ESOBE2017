@@ -400,38 +400,6 @@ Linear regression
 \series default
 \color inherit
 
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-
-\size tiny
-\color black
-I follow the notation in RW rather than PRML.
- In PRML: 
-\begin_inset Formula $y$
-\end_inset
-
- is the noise-free response.
- 
-\begin_inset Formula $t=y+\epsilon$
-\end_inset
-
- is the response with noise.
- 
-\begin_inset Formula $\beta^{-1}$
-\end_inset
-
- is the noise variance (
-\begin_inset Formula $\sigma_{n}^{2}$
-\end_inset
-
-).
-\end_layout
-
-\end_inset
-
-
 \begin_inset Formula 
 \[
 y=f(\mathbf{x})+\epsilon
@@ -631,7 +599,7 @@ Posterior
 \end_layout
 
 \begin_layout Itemize
-Recall: 
+
 \series bold
 \color blue
 Posterior precision = Data Precision + Prior Precision
@@ -2125,7 +2093,7 @@ Goal: the posterior of
 \begin_inset Formula $f(\cdot)$
 \end_inset
 
- over a grid of 
+ over a set of 
 \begin_inset Formula $x$
 \end_inset
 
@@ -2155,7 +2123,7 @@ posterior
 \begin_inset Formula 
 \begin{align*}
 \bar{\mathbf{f}}_{\star} & =K(\mathbf{x}_{\star},\mathbf{x})\left[K(\mathbf{x},\mathbf{x})+\sigma^{2}I\right]^{-1}\mathbf{y}\\
-\Omega=\mathrm{cov}(\mathbf{f}_{\star}\vert\mathbf{x}_{\star},\mathbf{y,X}) & =K(\mathbf{x}_{\star},\mathbf{x_{\star}})-K(\mathbf{x}_{\star},\mathbf{x})\left[K(\mathbf{x},\mathbf{x})+\sigma^{2}I\right]^{-1}K(\mathbf{x},\mathbf{x_{\star}})
+\Omega & =K(\mathbf{x}_{\star},\mathbf{x_{\star}})-K(\mathbf{x}_{\star},\mathbf{x})\left[K(\mathbf{x},\mathbf{x})+\sigma^{2}I\right]^{-1}K(\mathbf{x},\mathbf{x_{\star}})
 \end{align*}
 
 \end_inset
@@ -2176,7 +2144,7 @@ posterior
 status open
 
 \begin_layout Plain Layout
-Derivation sketch
+Proof sketch
 \end_layout
 
 \end_inset
@@ -2195,11 +2163,7 @@ Aim: the conditional distribution
 \end_inset
 
  (x's are non-random)
-\begin_inset Formula 
-\[
-\mathbf{f}_{\star}|\mathbf{x}_{\star},\mathbf{x},\mathbf{y}
-\]
-
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -2212,6 +2176,10 @@ Remember:
 y=f(x)+\varepsilon,\quad\varepsilon\sim N(0,\sigma^{2}),\quad f\sim GP(0,k(\mathbf{x},\mathbf{x}^{\prime}))
 \]
 
+\end_inset
+
+
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -2237,6 +2205,10 @@ K(\mathbf{x},\mathbf{x_{\star}}) & K(\mathbf{x},\mathbf{x})+\sigma^{2}I_{n}
 \end{array}\right)\right]
 \]
 
+\end_inset
+
+
+\begin_inset VSpace bigskip
 \end_inset
 
 

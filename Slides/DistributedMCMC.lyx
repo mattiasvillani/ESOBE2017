@@ -475,6 +475,8 @@ Avoiding marginalization
 \end_inset
 
  Parallelism, but can slow down convergence.
+ But not always.
+ Terenin et al (2017).
 \end_layout
 
 \begin_layout Standard
